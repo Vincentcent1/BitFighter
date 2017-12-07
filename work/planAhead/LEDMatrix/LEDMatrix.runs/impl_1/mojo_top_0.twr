@@ -1,0 +1,2515 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -o
+mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd mojo_top_0.pcf
+
+Design file:              mojo_top_0_routed.ncd
+Physical constraint file: mojo_top_0.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 243326816 paths analyzed, 884 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.418ns.
+--------------------------------------------------------------------------------
+Slack:                  0.582ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_2 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.432ns (Levels of Logic = 15)
+  Clock Path Skew:      0.049ns (0.699 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_2 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.CQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd2_2
+    SLICE_X8Y44.B1       net (fanout=5)        1.146   eqm/M_state_q_FSM_FFd2_2_0
+    SLICE_X8Y44.B        Tilo                  0.254   eqm/M_state_q_FSM_FFd4_4
+                                                       eqm/Mmux_M_modulus_a41
+    SLICE_X8Y43.C5       net (fanout=5)        0.403   eqm/M_modulus_a[3]
+    SLICE_X8Y43.CMUX     Tilo                  0.430   eqm/M_state_q_FSM_FFd1_4
+                                                       eqm/Mmux_M_alu_a44_G
+                                                       eqm/Mmux_M_alu_a44
+    SLICE_X9Y42.A6       net (fanout=1)        0.351   eqm/Mmux_M_alu_a43
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.432ns (4.485ns logic, 14.947ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.584ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_2 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.393ns (Levels of Logic = 15)
+  Clock Path Skew:      0.012ns (0.662 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_2 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.CQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd2_2
+    SLICE_X8Y44.B1       net (fanout=5)        1.146   eqm/M_state_q_FSM_FFd2_2_0
+    SLICE_X8Y44.B        Tilo                  0.254   eqm/M_state_q_FSM_FFd4_4
+                                                       eqm/Mmux_M_modulus_a41
+    SLICE_X8Y43.C5       net (fanout=5)        0.403   eqm/M_modulus_a[3]
+    SLICE_X8Y43.CMUX     Tilo                  0.430   eqm/M_state_q_FSM_FFd1_4
+                                                       eqm/Mmux_M_alu_a44_G
+                                                       eqm/Mmux_M_alu_a44
+    SLICE_X9Y42.A6       net (fanout=1)        0.351   eqm/Mmux_M_alu_a43
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.393ns (4.437ns logic, 14.956ns route)
+                                                       (22.9% logic, 77.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.650ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.351ns (Levels of Logic = 14)
+  Clock Path Skew:      0.036ns (0.699 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X5Y44.B4       net (fanout=10)       0.627   eqm/Mmux_alufna104
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.351ns (4.155ns logic, 15.196ns route)
+                                                       (21.5% logic, 78.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.652ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.312ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.001ns (0.662 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X5Y44.B4       net (fanout=10)       0.627   eqm/Mmux_alufna104
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.312ns (4.107ns logic, 15.205ns route)
+                                                       (21.3% logic, 78.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.686ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_3 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.313ns (Levels of Logic = 14)
+  Clock Path Skew:      0.034ns (0.699 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_3 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y47.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_4
+                                                       eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A5       net (fanout=8)        1.016   eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A        Tilo                  0.254   eqm/M_state_q_FSM_FFd2_2_1
+                                                       eqm/Mmux_M_alu_a35
+    SLICE_X9Y42.A1       net (fanout=1)        1.195   eqm/Mmux_M_alu_a34
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.313ns (4.055ns logic, 15.258ns route)
+                                                       (21.0% logic, 79.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.688ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_3 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.274ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.003ns (0.662 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_3 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y47.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_4
+                                                       eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A5       net (fanout=8)        1.016   eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A        Tilo                  0.254   eqm/M_state_q_FSM_FFd2_2_1
+                                                       eqm/Mmux_M_alu_a35
+    SLICE_X9Y42.A1       net (fanout=1)        1.195   eqm/Mmux_M_alu_a34
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.274ns (4.007ns logic, 15.267ns route)
+                                                       (20.8% logic, 79.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_2 (FF)
+  Destination:          eqm/prng/M_reroll2_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.188ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.049ns (0.601 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_2 to eqm/prng/M_reroll2_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.CQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd2_2
+    SLICE_X8Y44.B1       net (fanout=5)        1.146   eqm/M_state_q_FSM_FFd2_2_0
+    SLICE_X8Y44.B        Tilo                  0.254   eqm/M_state_q_FSM_FFd4_4
+                                                       eqm/Mmux_M_modulus_a41
+    SLICE_X8Y43.C5       net (fanout=5)        0.403   eqm/M_modulus_a[3]
+    SLICE_X8Y43.CMUX     Tilo                  0.430   eqm/M_state_q_FSM_FFd1_4
+                                                       eqm/Mmux_M_alu_a44_G
+                                                       eqm/Mmux_M_alu_a44
+    SLICE_X9Y42.A6       net (fanout=1)        0.351   eqm/Mmux_M_alu_a43
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y47.AX      net (fanout=2)        0.697   eqm/M_prng_alufnc[0]
+    SLICE_X12Y47.CLK     Tdick                 0.085   eqm/prng/M_reroll2_q
+                                                       eqm/prng/M_reroll2_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.188ns (4.437ns logic, 14.751ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.746ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.255ns (Levels of Logic = 15)
+  Clock Path Skew:      0.036ns (0.699 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X6Y48.D4       net (fanout=10)       0.867   eqm/Mmux_alufna104
+    SLICE_X6Y48.D        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/Mmux_M_alu_a5_2
+    SLICE_X10Y42.B6      net (fanout=8)        0.932   eqm/Mmux_M_alu_a51
+    SLICE_X10Y42.B       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N70
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2_SW0
+    SLICE_X10Y42.D1      net (fanout=2)        0.554   eqm/alu/divider/a[7]_b[7]_div_0/N70
+    SLICE_X10Y42.CMUX    Topdc                 0.402   eqm/alu/divider/a[7]_b[7]_div_0/N70
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2_F
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2
+    SLICE_X6Y48.B2       net (fanout=7)        1.545   eqm/alu/divider/a[7]_b[7]_div_0/o<4>1
+    SLICE_X6Y48.B        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o151
+    SLICE_X7Y46.D4       net (fanout=3)        0.513   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_306_o
+    SLICE_X7Y46.D        Tilo                  0.259   eqm/prng/M_state_q_FSM_FFd3_2
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11
+    SLICE_X8Y46.B1       net (fanout=5)        0.836   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy[5]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.255ns (4.786ns logic, 14.469ns route)
+                                                       (24.9% logic, 75.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.748ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.216ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.001ns (0.662 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X6Y48.D4       net (fanout=10)       0.867   eqm/Mmux_alufna104
+    SLICE_X6Y48.D        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/Mmux_M_alu_a5_2
+    SLICE_X10Y42.B6      net (fanout=8)        0.932   eqm/Mmux_M_alu_a51
+    SLICE_X10Y42.B       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N70
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2_SW0
+    SLICE_X10Y42.D1      net (fanout=2)        0.554   eqm/alu/divider/a[7]_b[7]_div_0/N70
+    SLICE_X10Y42.CMUX    Topdc                 0.402   eqm/alu/divider/a[7]_b[7]_div_0/N70
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2_F
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2
+    SLICE_X6Y48.B2       net (fanout=7)        1.545   eqm/alu/divider/a[7]_b[7]_div_0/o<4>1
+    SLICE_X6Y48.B        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o151
+    SLICE_X7Y46.D4       net (fanout=3)        0.513   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_306_o
+    SLICE_X7Y46.D        Tilo                  0.259   eqm/prng/M_state_q_FSM_FFd3_2
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11
+    SLICE_X8Y46.B1       net (fanout=5)        0.836   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy[5]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.216ns (4.738ns logic, 14.478ns route)
+                                                       (24.7% logic, 75.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.768ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_2 (FF)
+  Destination:          eqm/healthbar/M_b_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.244ns (Levels of Logic = 15)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_2 to eqm/healthbar/M_b_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.CQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd2_2
+    SLICE_X8Y44.B1       net (fanout=5)        1.146   eqm/M_state_q_FSM_FFd2_2_0
+    SLICE_X8Y44.B        Tilo                  0.254   eqm/M_state_q_FSM_FFd4_4
+                                                       eqm/Mmux_M_modulus_a41
+    SLICE_X8Y43.C5       net (fanout=5)        0.403   eqm/M_modulus_a[3]
+    SLICE_X8Y43.CMUX     Tilo                  0.430   eqm/M_state_q_FSM_FFd1_4
+                                                       eqm/Mmux_M_alu_a44_G
+                                                       eqm/Mmux_M_alu_a44
+    SLICE_X9Y42.A6       net (fanout=1)        0.351   eqm/Mmux_M_alu_a43
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y51.A5       net (fanout=3)        0.757   eqm/out<0>25
+    SLICE_X5Y51.CLK      Tas                   0.373   eqm/M_healthbar_out[5]
+                                                       eqm/healthbar/M_b_q_0_glue_set
+                                                       eqm/healthbar/M_b_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.244ns (4.485ns logic, 14.759ns route)
+                                                       (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.769ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.244ns (Levels of Logic = 14)
+  Clock Path Skew:      0.048ns (0.699 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X6Y46.B3       net (fanout=3)        1.691   eqm/Mmux_M_alu_b17
+    SLICE_X6Y46.B        Tilo                  0.235   eqm/M_state_q_FSM_FFd1_3
+                                                       eqm/Mmux_M_alu_b110
+    SLICE_X10Y50.D5      net (fanout=58)       1.437   eqm/M_alu_b[0]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.244ns (3.988ns logic, 15.256ns route)
+                                                       (20.7% logic, 79.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.771ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.205ns (Levels of Logic = 14)
+  Clock Path Skew:      0.011ns (0.662 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X6Y46.B3       net (fanout=3)        1.691   eqm/Mmux_M_alu_b17
+    SLICE_X6Y46.B        Tilo                  0.235   eqm/M_state_q_FSM_FFd1_3
+                                                       eqm/Mmux_M_alu_b110
+    SLICE_X10Y50.D5      net (fanout=58)       1.437   eqm/M_alu_b[0]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.205ns (3.940ns logic, 15.265ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.796ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/prng/M_reroll2_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.107ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.062ns (0.601 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/prng/M_reroll2_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X5Y44.B4       net (fanout=10)       0.627   eqm/Mmux_alufna104
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y47.AX      net (fanout=2)        0.697   eqm/M_prng_alufnc[0]
+    SLICE_X12Y47.CLK     Tdick                 0.085   eqm/prng/M_reroll2_q
+                                                       eqm/prng/M_reroll2_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.107ns (4.107ns logic, 15.000ns route)
+                                                       (21.5% logic, 78.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.805ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/prng/M_state_q_FSM_FFd1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.195ns (Levels of Logic = 14)
+  Clock Path Skew:      0.035ns (0.699 - 0.664)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/prng/M_state_q_FSM_FFd1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y46.BQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd1_3
+                                                       eqm/prng/M_state_q_FSM_FFd1
+    SLICE_X13Y46.C5      net (fanout=17)       1.135   eqm/M_state_q_FSM_FFd1_3
+    SLICE_X13Y46.C       Tilo                  0.259   eqm/M_prng_number[5]
+                                                       eqm/prng/Mmux_alufna41
+    SLICE_X9Y42.A4       net (fanout=1)        0.907   eqm/M_prng_alufna[3]
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.195ns (4.106ns logic, 15.089ns route)
+                                                       (21.4% logic, 78.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.807ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/prng/M_state_q_FSM_FFd1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.156ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.002ns (0.662 - 0.664)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/prng/M_state_q_FSM_FFd1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y46.BQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd1_3
+                                                       eqm/prng/M_state_q_FSM_FFd1
+    SLICE_X13Y46.C5      net (fanout=17)       1.135   eqm/M_state_q_FSM_FFd1_3
+    SLICE_X13Y46.C       Tilo                  0.259   eqm/M_prng_number[5]
+                                                       eqm/prng/Mmux_alufna41
+    SLICE_X9Y42.A4       net (fanout=1)        0.907   eqm/M_prng_alufna[3]
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.156ns (4.058ns logic, 15.098ns route)
+                                                       (21.2% logic, 78.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.808ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/healthbar/M_state_q_FSM_FFd2 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.188ns (Levels of Logic = 14)
+  Clock Path Skew:      0.031ns (0.699 - 0.668)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/healthbar/M_state_q_FSM_FFd2 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y46.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2
+                                                       eqm/healthbar/M_state_q_FSM_FFd2
+    SLICE_X5Y46.D5       net (fanout=14)       0.843   eqm/M_state_q_FSM_FFd2_2
+    SLICE_X5Y46.D        Tilo                  0.259   eqm/M_state_q_FSM_FFd3_0
+                                                       eqm/healthbar/Mmux_alufna105_SW1_SW1
+    SLICE_X7Y44.C2       net (fanout=1)        0.949   eqm/healthbar/N110
+    SLICE_X7Y44.C        Tilo                  0.259   eqm/M_state_q_FSM_FFd3_2_0
+                                                       eqm/healthbar/Mmux_alufna105
+    SLICE_X5Y44.B1       net (fanout=10)       0.961   eqm/Mmux_alufna105
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.188ns (4.060ns logic, 15.128ns route)
+                                                       (21.2% logic, 78.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/healthbar/M_state_q_FSM_FFd2 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.149ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.006ns (0.662 - 0.668)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/healthbar/M_state_q_FSM_FFd2 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y46.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2
+                                                       eqm/healthbar/M_state_q_FSM_FFd2
+    SLICE_X5Y46.D5       net (fanout=14)       0.843   eqm/M_state_q_FSM_FFd2_2
+    SLICE_X5Y46.D        Tilo                  0.259   eqm/M_state_q_FSM_FFd3_0
+                                                       eqm/healthbar/Mmux_alufna105_SW1_SW1
+    SLICE_X7Y44.C2       net (fanout=1)        0.949   eqm/healthbar/N110
+    SLICE_X7Y44.C        Tilo                  0.259   eqm/M_state_q_FSM_FFd3_2_0
+                                                       eqm/healthbar/Mmux_alufna105
+    SLICE_X5Y44.B1       net (fanout=10)       0.961   eqm/Mmux_alufna105
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.149ns (4.012ns logic, 15.137ns route)
+                                                       (21.0% logic, 79.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.831ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.182ns (Levels of Logic = 16)
+  Clock Path Skew:      0.048ns (0.699 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X9Y45.D1       net (fanout=3)        0.889   eqm/Mmux_M_alu_b17
+    SLICE_X9Y45.D        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_1
+                                                       eqm/Mmux_M_alu_b110_1
+    SLICE_X12Y44.D6      net (fanout=7)        0.771   eqm/Mmux_M_alu_b110
+    SLICE_X12Y44.D       Tilo                  0.254   eqm/M_state_q_FSM_FFd3_4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy<6>1
+    SLICE_X12Y45.CX      net (fanout=5)        0.705   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy[6]
+    SLICE_X12Y45.CMUX    Tcxc                  0.182   eqm/Mmux_M_alu_alufn4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_lut<6>1
+    SLICE_X11Y45.B3      net (fanout=4)        0.839   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_lut[6]
+    SLICE_X11Y45.B       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW3_F
+    SLICE_X11Y45.A2      net (fanout=1)        0.931   eqm/alu/divider/a[7]_b[7]_div_0/N340
+    SLICE_X11Y45.A       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o161
+    SLICE_X11Y47.C3      net (fanout=8)        0.598   eqm/alu/divider/a[7]_b[7]_div_0/a[6]_GND_34_o_MUX_305_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.182ns (4.749ns logic, 14.433ns route)
+                                                       (24.8% logic, 75.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.832ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd2_3 (FF)
+  Destination:          eqm/prng/M_reroll2_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.069ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.064ns (0.601 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd2_3 to eqm/prng/M_reroll2_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y47.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_4
+                                                       eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A5       net (fanout=8)        1.016   eqm/M_state_q_FSM_FFd2_3
+    SLICE_X8Y42.A        Tilo                  0.254   eqm/M_state_q_FSM_FFd2_2_1
+                                                       eqm/Mmux_M_alu_a35
+    SLICE_X9Y42.A1       net (fanout=1)        1.195   eqm/Mmux_M_alu_a34
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y47.AX      net (fanout=2)        0.697   eqm/M_prng_alufnc[0]
+    SLICE_X12Y47.CLK     Tdick                 0.085   eqm/prng/M_reroll2_q
+                                                       eqm/prng/M_reroll2_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.069ns (4.007ns logic, 15.062ns route)
+                                                       (21.0% logic, 79.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.833ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.143ns (Levels of Logic = 16)
+  Clock Path Skew:      0.011ns (0.662 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X9Y45.D1       net (fanout=3)        0.889   eqm/Mmux_M_alu_b17
+    SLICE_X9Y45.D        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_1
+                                                       eqm/Mmux_M_alu_b110_1
+    SLICE_X12Y44.D6      net (fanout=7)        0.771   eqm/Mmux_M_alu_b110
+    SLICE_X12Y44.D       Tilo                  0.254   eqm/M_state_q_FSM_FFd3_4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy<6>1
+    SLICE_X12Y45.CX      net (fanout=5)        0.705   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy[6]
+    SLICE_X12Y45.CMUX    Tcxc                  0.182   eqm/Mmux_M_alu_alufn4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_lut<6>1
+    SLICE_X11Y45.B3      net (fanout=4)        0.839   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_lut[6]
+    SLICE_X11Y45.B       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW3_F
+    SLICE_X11Y45.A2      net (fanout=1)        0.931   eqm/alu/divider/a[7]_b[7]_div_0/N340
+    SLICE_X11Y45.A       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o161
+    SLICE_X11Y47.C3      net (fanout=8)        0.598   eqm/alu/divider/a[7]_b[7]_div_0/a[6]_GND_34_o_MUX_305_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.143ns (4.701ns logic, 14.442ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.836ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_winner_q_0 (FF)
+  Destination:          eqm/healthbar/M_b_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.163ns (Levels of Logic = 14)
+  Clock Path Skew:      0.034ns (0.697 - 0.663)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_winner_q_0 to eqm/healthbar/M_b_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y46.AQ       Tcko                  0.525   eqm/M_winner_q[1]
+                                                       eqm/M_winner_q_0
+    SLICE_X7Y45.D1       net (fanout=8)        1.180   eqm/M_winner_q[0]
+    SLICE_X7Y45.D        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104_SW1_SW1
+    SLICE_X7Y45.C3       net (fanout=1)        1.014   eqm/healthbar/N113
+    SLICE_X7Y45.C        Tilo                  0.259   eqm/M_healthbar_roundwinnerout
+                                                       eqm/healthbar/Mmux_alufna104
+    SLICE_X5Y44.B4       net (fanout=10)       0.627   eqm/Mmux_alufna104
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y51.A5       net (fanout=3)        0.757   eqm/out<0>25
+    SLICE_X5Y51.CLK      Tas                   0.373   eqm/M_healthbar_out[5]
+                                                       eqm/healthbar/M_b_q_0_glue_set
+                                                       eqm/healthbar/M_b_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.163ns (4.155ns logic, 15.008ns route)
+                                                       (21.7% logic, 78.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.838ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd3_3 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.176ns (Levels of Logic = 14)
+  Clock Path Skew:      0.049ns (0.699 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd3_3 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd3_3
+    SLICE_X8Y42.A1       net (fanout=8)        0.879   eqm/M_state_q_FSM_FFd3_3
+    SLICE_X8Y42.A        Tilo                  0.254   eqm/M_state_q_FSM_FFd2_2_1
+                                                       eqm/Mmux_M_alu_a35
+    SLICE_X9Y42.A1       net (fanout=1)        1.195   eqm/Mmux_M_alu_a34
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.176ns (4.055ns logic, 15.121ns route)
+                                                       (21.1% logic, 78.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.839ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.164ns (Levels of Logic = 15)
+  Clock Path Skew:      0.038ns (0.699 - 0.661)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd4_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y44.AQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd3_1
+                                                       eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A4       net (fanout=7)        0.810   eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_a121_1
+    SLICE_X5Y45.A2       net (fanout=3)        0.989   eqm/Mmux_M_alu_a121
+    SLICE_X5Y45.A        Tilo                  0.259   eqm/M_modulus_out[2]
+                                                       eqm/Mmux_M_alu_b61_1
+    SLICE_X8Y45.A1       net (fanout=2)        1.118   eqm/Mmux_M_alu_b61
+    SLICE_X8Y45.A        Tilo                  0.254   eqm/M_healthbar_gameoverout
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<7>121
+    SLICE_X12Y43.D2      net (fanout=13)       1.956   eqm/alu/divider/a[7]_b[7]_div_0/o<7>12
+    SLICE_X12Y43.CMUX    Topdc                 0.456   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11_SW3_F
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11_SW3
+    SLICE_X12Y43.A1      net (fanout=3)        0.808   eqm/alu/divider/a[7]_b[7]_div_0/N217
+    SLICE_X12Y43.A       Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11
+    SLICE_X12Y43.B6      net (fanout=3)        0.150   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy[6]
+    SLICE_X12Y43.B       Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o171
+    SLICE_X11Y47.C5      net (fanout=2)        0.880   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.164ns (4.824ns logic, 14.340ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.840ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd3_3 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.137ns (Levels of Logic = 14)
+  Clock Path Skew:      0.012ns (0.662 - 0.650)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd3_3 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y43.AQ       Tcko                  0.430   eqm/M_state_q_FSM_FFd2_2_0
+                                                       eqm/M_state_q_FSM_FFd3_3
+    SLICE_X8Y42.A1       net (fanout=8)        0.879   eqm/M_state_q_FSM_FFd3_3
+    SLICE_X8Y42.A        Tilo                  0.254   eqm/M_state_q_FSM_FFd2_2_1
+                                                       eqm/Mmux_M_alu_a35
+    SLICE_X9Y42.A1       net (fanout=1)        1.195   eqm/Mmux_M_alu_a34
+    SLICE_X9Y42.A        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_4_1
+                                                       eqm/Mmux_M_alu_a47
+    SLICE_X5Y44.B6       net (fanout=4)        0.672   eqm/Mmux_M_alu_a46
+    SLICE_X5Y44.B        Tilo                  0.259   M_stage_q_3_1
+                                                       eqm/Mmux_M_alu_a48
+    SLICE_X10Y50.D6      net (fanout=33)       2.318   eqm/M_alu_a[3]
+    SLICE_X10Y50.D       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N312
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW12
+    SLICE_X10Y41.A6      net (fanout=1)        1.690   eqm/alu/divider/a[7]_b[7]_div_0/N312
+    SLICE_X10Y41.A       Tilo                  0.235   eqm/alu/divider/a[7]_b[7]_div_0/N311
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1_SW2
+    SLICE_X8Y47.C4       net (fanout=1)        1.755   eqm/alu/divider/a[7]_b[7]_div_0/N64
+    SLICE_X8Y47.C        Tilo                  0.255   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B4       net (fanout=1)        0.309   eqm/alu/divider/a[7]_b[7]_div_0/o<2>1
+    SLICE_X8Y47.B        Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/N119
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW2
+    SLICE_X10Y47.A5      net (fanout=6)        0.626   eqm/alu/divider/a[7]_b[7]_div_0/N81
+    SLICE_X10Y47.A       Tilo                  0.235   eqm/M_mul_value_q_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24
+    SLICE_X10Y46.D5      net (fanout=19)       0.489   eqm/a[7]_b[7]_div_0_OUT[2]
+    SLICE_X10Y46.D       Tilo                  0.235   eqm/M_num2_q[2]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>3
+    SLICE_X11Y47.B1      net (fanout=1)        1.010   eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y47.B       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<1>1
+    SLICE_X11Y46.D2      net (fanout=8)        0.764   eqm/alu/o<1>2
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.137ns (4.007ns logic, 15.130ns route)
+                                                       (20.9% logic, 79.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.841ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.125ns (Levels of Logic = 15)
+  Clock Path Skew:      0.001ns (0.662 - 0.661)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd4_1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y44.AQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd3_1
+                                                       eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A4       net (fanout=7)        0.810   eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_a121_1
+    SLICE_X5Y45.A2       net (fanout=3)        0.989   eqm/Mmux_M_alu_a121
+    SLICE_X5Y45.A        Tilo                  0.259   eqm/M_modulus_out[2]
+                                                       eqm/Mmux_M_alu_b61_1
+    SLICE_X8Y45.A1       net (fanout=2)        1.118   eqm/Mmux_M_alu_b61
+    SLICE_X8Y45.A        Tilo                  0.254   eqm/M_healthbar_gameoverout
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<7>121
+    SLICE_X12Y43.D2      net (fanout=13)       1.956   eqm/alu/divider/a[7]_b[7]_div_0/o<7>12
+    SLICE_X12Y43.CMUX    Topdc                 0.456   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11_SW3_F
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11_SW3
+    SLICE_X12Y43.A1      net (fanout=3)        0.808   eqm/alu/divider/a[7]_b[7]_div_0/N217
+    SLICE_X12Y43.A       Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<6>11
+    SLICE_X12Y43.B6      net (fanout=3)        0.150   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy[6]
+    SLICE_X12Y43.B       Tilo                  0.254   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o171
+    SLICE_X11Y47.C5      net (fanout=2)        0.880   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_304_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.125ns (4.776ns logic, 14.349ns route)
+                                                       (25.0% logic, 75.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.842ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.161ns (Levels of Logic = 14)
+  Clock Path Skew:      0.038ns (0.699 - 0.661)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd4_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y44.AQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd3_1
+                                                       eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A4       net (fanout=7)        0.810   eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_a121_1
+    SLICE_X5Y45.A2       net (fanout=3)        0.989   eqm/Mmux_M_alu_a121
+    SLICE_X5Y45.A        Tilo                  0.259   eqm/M_modulus_out[2]
+                                                       eqm/Mmux_M_alu_b61_1
+    SLICE_X8Y45.A1       net (fanout=2)        1.118   eqm/Mmux_M_alu_b61
+    SLICE_X8Y45.A        Tilo                  0.254   eqm/M_healthbar_gameoverout
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<7>121
+    SLICE_X11Y44.D4      net (fanout=13)       1.697   eqm/alu/divider/a[7]_b[7]_div_0/o<7>12
+    SLICE_X11Y44.D       Tilo                  0.259   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_287_o151
+    SLICE_X4Y47.B1       net (fanout=9)        1.547   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_282_o
+    SLICE_X4Y47.B        Tilo                  0.254   eqm/modulus/_n0049
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11_SW1
+    SLICE_X7Y46.D2       net (fanout=1)        0.763   eqm/alu/divider/a[7]_b[7]_div_0/N129
+    SLICE_X7Y46.D        Tilo                  0.259   eqm/prng/M_state_q_FSM_FFd3_2
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11
+    SLICE_X8Y46.B1       net (fanout=5)        0.836   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy[5]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.161ns (4.373ns logic, 14.788ns route)
+                                                       (22.8% logic, 77.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.844ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.122ns (Levels of Logic = 14)
+  Clock Path Skew:      0.001ns (0.662 - 0.661)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/M_state_q_FSM_FFd4_1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y44.AQ       Tcko                  0.476   eqm/M_state_q_FSM_FFd3_1
+                                                       eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A4       net (fanout=7)        0.810   eqm/M_state_q_FSM_FFd4_1
+    SLICE_X6Y45.A        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_a121_1
+    SLICE_X5Y45.A2       net (fanout=3)        0.989   eqm/Mmux_M_alu_a121
+    SLICE_X5Y45.A        Tilo                  0.259   eqm/M_modulus_out[2]
+                                                       eqm/Mmux_M_alu_b61_1
+    SLICE_X8Y45.A1       net (fanout=2)        1.118   eqm/Mmux_M_alu_b61
+    SLICE_X8Y45.A        Tilo                  0.254   eqm/M_healthbar_gameoverout
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<7>121
+    SLICE_X11Y44.D4      net (fanout=13)       1.697   eqm/alu/divider/a[7]_b[7]_div_0/o<7>12
+    SLICE_X11Y44.D       Tilo                  0.259   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_287_o151
+    SLICE_X4Y47.B1       net (fanout=9)        1.547   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_282_o
+    SLICE_X4Y47.B        Tilo                  0.254   eqm/modulus/_n0049
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11_SW1
+    SLICE_X7Y46.D2       net (fanout=1)        0.763   eqm/alu/divider/a[7]_b[7]_div_0/N129
+    SLICE_X7Y46.D        Tilo                  0.259   eqm/prng/M_state_q_FSM_FFd3_2
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11
+    SLICE_X8Y46.B1       net (fanout=5)        0.836   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy[5]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.122ns (4.325ns logic, 14.797ns route)
+                                                       (22.6% logic, 77.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.162ns (Levels of Logic = 15)
+  Clock Path Skew:      0.048ns (0.699 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X6Y45.C3       net (fanout=3)        0.932   eqm/Mmux_M_alu_b17
+    SLICE_X6Y45.C        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_b110_2
+    SLICE_X6Y48.C2       net (fanout=14)       1.227   eqm/Mmux_M_alu_b1101
+    SLICE_X6Y48.C        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<4>1
+    SLICE_X11Y45.B1      net (fanout=2)        1.250   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy[4]
+    SLICE_X11Y45.B       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW3_F
+    SLICE_X11Y45.A2      net (fanout=1)        0.931   eqm/alu/divider/a[7]_b[7]_div_0/N340
+    SLICE_X11Y45.A       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o161
+    SLICE_X11Y47.C3      net (fanout=8)        0.598   eqm/alu/divider/a[7]_b[7]_div_0/a[6]_GND_34_o_MUX_305_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.162ns (4.524ns logic, 14.638ns route)
+                                                       (23.6% logic, 76.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.853ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/healthbar/M_a_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.160ns (Levels of Logic = 15)
+  Clock Path Skew:      0.048ns (0.699 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/healthbar/M_a_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X9Y45.D1       net (fanout=3)        0.889   eqm/Mmux_M_alu_b17
+    SLICE_X9Y45.D        Tilo                  0.259   eqm/M_state_q_FSM_FFd2_1
+                                                       eqm/Mmux_M_alu_b110_1
+    SLICE_X12Y44.D6      net (fanout=7)        0.771   eqm/Mmux_M_alu_b110
+    SLICE_X12Y44.D       Tilo                  0.254   eqm/M_state_q_FSM_FFd3_4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy<6>1
+    SLICE_X10Y42.C6      net (fanout=5)        0.820   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_5_OUT_Madd_Madd_cy[6]
+    SLICE_X10Y42.CMUX    Tilo                  0.403   eqm/alu/divider/a[7]_b[7]_div_0/N70
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2_G
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>2
+    SLICE_X6Y48.B2       net (fanout=7)        1.545   eqm/alu/divider/a[7]_b[7]_div_0/o<4>1
+    SLICE_X6Y48.B        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o151
+    SLICE_X7Y46.D4       net (fanout=3)        0.513   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_306_o
+    SLICE_X7Y46.D        Tilo                  0.259   eqm/prng/M_state_q_FSM_FFd3_2
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy<5>11
+    SLICE_X8Y46.B1       net (fanout=5)        0.836   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_11_OUT_Madd_Madd_cy[5]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X8Y51.A1       net (fanout=3)        1.050   eqm/N157
+    SLICE_X8Y51.A        Tilo                  0.254   eqm/M_azero_q
+                                                       eqm/alu/out<0>26
+    SLICE_X5Y50.C5       net (fanout=3)        0.945   eqm/out<0>25
+    SLICE_X5Y50.CLK      Tas                   0.373   eqm/M_healthbar_out[0]
+                                                       eqm/healthbar/M_a_q_0_glue_set
+                                                       eqm/healthbar/M_a_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.160ns (4.687ns logic, 14.473ns route)
+                                                       (24.5% logic, 75.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.853ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               eqm/modulus/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          eqm/prng/M_reroll1_q (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.123ns (Levels of Logic = 15)
+  Clock Path Skew:      0.011ns (0.662 - 0.651)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: eqm/modulus/M_state_q_FSM_FFd2_1 to eqm/prng/M_reroll1_q
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y44.AQ      Tcko                  0.430   eqm/M_state_q_FSM_FFd2_3_0
+                                                       eqm/modulus/M_state_q_FSM_FFd2_1
+    SLICE_X10Y44.B1      net (fanout=7)        1.579   eqm/M_state_q_FSM_FFd2_1_0
+    SLICE_X10Y44.B       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18_SW2
+    SLICE_X10Y44.A4      net (fanout=1)        0.492   eqm/N83
+    SLICE_X10Y44.A       Tilo                  0.235   eqm/M_mul_value_q_2
+                                                       eqm/Mmux_M_alu_b18
+    SLICE_X6Y45.C3       net (fanout=3)        0.932   eqm/Mmux_M_alu_b17
+    SLICE_X6Y45.C        Tilo                  0.235   eqm/M_state_q_FSM_FFd3_2
+                                                       eqm/Mmux_M_alu_b110_2
+    SLICE_X6Y48.C2       net (fanout=14)       1.227   eqm/Mmux_M_alu_b1101
+    SLICE_X6Y48.C        Tilo                  0.235   eqm/Mmux_M_alu_a51
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy<4>1
+    SLICE_X11Y45.B1      net (fanout=2)        1.250   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_9_OUT_Madd_Madd_cy[4]
+    SLICE_X11Y45.B       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<4>11_SW3_F
+    SLICE_X11Y45.A2      net (fanout=1)        0.931   eqm/alu/divider/a[7]_b[7]_div_0/N340
+    SLICE_X11Y45.A       Tilo                  0.259   eqm/M_state_q_FSM_FFd3_1_0
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_311_o161
+    SLICE_X11Y47.C3      net (fanout=8)        0.598   eqm/alu/divider/a[7]_b[7]_div_0/a[6]_GND_34_o_MUX_305_o
+    SLICE_X11Y47.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/a[5]_GND_34_o_MUX_328_o
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<3>11
+    SLICE_X8Y46.B4       net (fanout=19)       0.601   eqm/a[7]_b[7]_div_0_OUT[3]
+    SLICE_X8Y46.B        Tilo                  0.254   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Mmux_a[0]_GND_34_o_MUX_333_o171
+    SLICE_X8Y46.C4       net (fanout=18)       0.365   eqm/alu/divider/a[7]_b[7]_div_0/a[7]_GND_34_o_MUX_326_o
+    SLICE_X8Y46.C        Tilo                  0.255   eqm/healthbar/_n0197_inv
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<2>24_SW0
+    SLICE_X8Y49.B1       net (fanout=1)        1.920   eqm/alu/divider/a[7]_b[7]_div_0/N115
+    SLICE_X8Y49.BMUX     Topbb                 0.464   eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy[4]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_lut<2>
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/Madd_GND_34_o_b[7]_add_15_OUT_Madd_Madd_cy<4>
+    SLICE_X7Y48.A6       net (fanout=3)        0.678   eqm/alu/divider/a[7]_b[7]_div_0/GND_34_o_b[7]_add_15_OUT[2]
+    SLICE_X7Y48.A        Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/N211
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4_SW1
+    SLICE_X11Y46.D6      net (fanout=1)        0.651   eqm/alu/divider/a[7]_b[7]_div_0/N48
+    SLICE_X11Y46.D       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C1      net (fanout=1)        1.419   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+    SLICE_X11Y46.C       Tilo                  0.259   eqm/alu/divider/a[7]_b[7]_div_0/o<0>4
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1_SW0
+    SLICE_X10Y48.A5      net (fanout=3)        0.419   eqm/N157
+    SLICE_X10Y48.A       Tilo                  0.235   eqm/M_modulus_out[9]
+                                                       eqm/alu/divider/a[7]_b[7]_div_0/o<0>1
+    SLICE_X13Y48.B5      net (fanout=5)        0.683   eqm/o<0>2
+    SLICE_X13Y48.B       Tilo                  0.259   eqm/M_prng_alufnc[0]
+                                                       eqm/Mmux_M_prng_alufnc11
+    SLICE_X12Y48.AX      net (fanout=2)        0.902   eqm/M_prng_alufnc[0]
+    SLICE_X12Y48.CLK     Tdick                 0.085   eqm/prng/M_reroll1_q
+                                                       eqm/prng/M_reroll1_q
+    -------------------------------------------------  ---------------------------
+    Total                                     19.123ns (4.476ns logic, 14.647ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[0]/CLK0
+  Logical resource: eqm/M_health_val_q_0/CK0
+  Location pin: OLOGIC_X1Y60.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[1]/CLK0
+  Logical resource: eqm/M_health_val_q_1/CK0
+  Location pin: OLOGIC_X2Y62.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[2]/CLK0
+  Logical resource: eqm/M_health_val_q_2/CK0
+  Location pin: OLOGIC_X2Y60.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[3]/CLK0
+  Logical resource: eqm/M_health_val_q_3/CK0
+  Location pin: OLOGIC_X6Y62.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[4]/CLK0
+  Logical resource: eqm/M_health_val_q_4/CK0
+  Location pin: OLOGIC_X6Y60.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[5]/CLK0
+  Logical resource: eqm/M_health_val_q_5/CK0
+  Location pin: OLOGIC_X6Y61.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[6]/CLK0
+  Logical resource: eqm/M_health_val_q_6/CK0
+  Location pin: OLOGIC_X6Y63.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[7]/CLK0
+  Logical resource: eqm/M_health_val_q_7/CK0
+  Location pin: OLOGIC_X2Y61.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[8]/CLK0
+  Logical resource: eqm/M_health_val_q_8/CK0
+  Location pin: OLOGIC_X2Y63.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_eqm_heath_points[9]/CLK0
+  Logical resource: eqm/M_health_val_q_9/CK0
+  Location pin: OLOGIC_X1Y61.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[3]/CLK
+  Logical resource: M_counter1_q_0/CK
+  Location pin: SLICE_X8Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[3]/CLK
+  Logical resource: M_counter1_q_1/CK
+  Location pin: SLICE_X8Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[3]/CLK
+  Logical resource: M_counter1_q_2/CK
+  Location pin: SLICE_X8Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[3]/CLK
+  Logical resource: M_counter1_q_3/CK
+  Location pin: SLICE_X8Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[7]/CLK
+  Logical resource: M_counter1_q_4/CK
+  Location pin: SLICE_X8Y29.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[7]/CLK
+  Logical resource: M_counter1_q_5/CK
+  Location pin: SLICE_X8Y29.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[7]/CLK
+  Logical resource: M_counter1_q_6/CK
+  Location pin: SLICE_X8Y29.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[7]/CLK
+  Logical resource: M_counter1_q_7/CK
+  Location pin: SLICE_X8Y29.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[11]/CLK
+  Logical resource: M_counter1_q_8/CK
+  Location pin: SLICE_X8Y30.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[11]/CLK
+  Logical resource: M_counter1_q_9/CK
+  Location pin: SLICE_X8Y30.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[11]/CLK
+  Logical resource: M_counter1_q_10/CK
+  Location pin: SLICE_X8Y30.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[11]/CLK
+  Logical resource: M_counter1_q_11/CK
+  Location pin: SLICE_X8Y30.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[15]/CLK
+  Logical resource: M_counter1_q_12/CK
+  Location pin: SLICE_X8Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[15]/CLK
+  Logical resource: M_counter1_q_13/CK
+  Location pin: SLICE_X8Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[15]/CLK
+  Logical resource: M_counter1_q_14/CK
+  Location pin: SLICE_X8Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[15]/CLK
+  Logical resource: M_counter1_q_15/CK
+  Location pin: SLICE_X8Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[19]/CLK
+  Logical resource: M_counter1_q_16/CK
+  Location pin: SLICE_X8Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[19]/CLK
+  Logical resource: M_counter1_q_17/CK
+  Location pin: SLICE_X8Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter1_q[19]/CLK
+  Logical resource: M_counter1_q_18/CK
+  Location pin: SLICE_X8Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.418|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 243326816 paths, 0 nets, and 2985 connections
+
+Design statistics:
+   Minimum period:  19.418ns{1}   (Maximum frequency:  51.499MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Dec 07 23:50:33 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 223 MB
+
+
+

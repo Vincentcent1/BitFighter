@@ -1,0 +1,39 @@
+/*************************************
+A pseudo random number generator that produce a 4 bit random number when prompted with generate == 1
+Use seed to make different instance of the random number generator.   
+  args = SEED (To make a unique instance of the random number generator)
+  input = generate (0/1)
+  output = 4 bit Random number
+  Reference link: https://en.wikipedia.org/wiki/Linear-feedback_shift_register
+   **************************************/
+module ans #(
+  SEED = 4b1000: SEED.WIDTH == 4
+    )(
+    input clk,  // clock
+    input rst,
+    input next,
+    output number[4]
+  ) {
+
+  .clk(clk)  {
+    dff out[4]; //the two bit to be xored
+    }
+  sig temp;
+  sig temp_out[4];
+  
+  always {
+    number = out.q;
+    
+    if (next == 1 || out.q > 4d9) {
+      temp = out.q[0] ^ out.q[1];
+      temp_out = out.q >> 1;
+      temp_out[3] = temp;
+      out.d = temp_out;  
+    }
+    
+    if (rst){
+      out.d = SEED;
+      }
+    
+  }
+}

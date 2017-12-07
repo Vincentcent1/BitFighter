@@ -1,0 +1,23 @@
+module convertALUFN (
+    input clk,  // clock
+    input rst,  // reset
+    input oper[2],
+    output alufn[6]
+  ) {
+
+  always {
+  // output = 2 bit random number (00 --> +, 01 --> -, 10 --> *, 11--> /)
+    case(oper) {
+      0:
+        alufn = Inst.ADD;
+      1:
+        alufn = Inst.SUB;
+      2:
+        alufn = Inst.MUL;
+      3:
+        alufn = Inst.DIV;
+      default:
+        alufn = Inst.ADD;
+    }
+  }
+}

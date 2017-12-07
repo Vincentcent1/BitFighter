@@ -1,0 +1,772 @@
+
+*** Running xst
+    with args -ifn "mojo_top_0.xst" -ofn "mojo_top_0.srp" -intstyle ise
+
+Reading design: mojo_top_0.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/pipeline_29.v" into library work
+Parsing module <pipeline_29>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/shifter[1]_26.v" into library work
+Parsing module <shifter_26>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/multiplier_27.v" into library work
+Parsing module <multiplier_27>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/ledMatrix_17.v" into library work
+Parsing module <ledMatrix_17>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/edge_detector_3.v" into library work
+Parsing module <edge_detector_3>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/divider_28.v" into library work
+Parsing module <divider_28>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/compare[1]_25.v" into library work
+Parsing module <compare_25>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/button_conditioner_13.v" into library work
+Parsing module <button_conditioner_13>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/boolean[1]_24.v" into library work
+Parsing module <boolean_24>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/adder_23.v" into library work
+Parsing module <adder_23>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/prng_9.v" into library work
+Parsing module <prng_9>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/prng2_10.v" into library work
+Parsing module <prng2_10>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/modulus_11.v" into library work
+Parsing module <modulus_11>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/healthbar_8.v" into library work
+Parsing module <healthbar_8>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v" into library work
+Parsing module <displayModule_7>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/convertALUFN_6.v" into library work
+Parsing module <convertALUFN_6>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" into library work
+Parsing module <buttonSelect_5>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/alu_12.v" into library work
+Parsing module <alu_12>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/reset_conditioner_2.v" into library work
+Parsing module <reset_conditioner_2>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/dataPathAlu_1.v" into library work
+Parsing module <dataPathAlu_1>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/counter_4.v" into library work
+Parsing module <counter_4>.
+Analyzing Verilog file "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Parsing module <mojo_top_0>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <mojo_top_0>.
+
+Elaborating module <dataPathAlu_1>.
+
+Elaborating module <buttonSelect_5>.
+
+Elaborating module <button_conditioner_13>.
+
+Elaborating module <pipeline_29>.
+
+Elaborating module <edge_detector_3>.
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" Line 50: Assignment to M_edge_detector1_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" Line 57: Assignment to M_edge_detector2_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" Line 64: Assignment to M_edge_detector3_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" Line 71: Assignment to M_edge_detector4_out ignored, since the identifier is never used
+
+Elaborating module <convertALUFN_6>.
+
+Elaborating module <displayModule_7>.
+
+Elaborating module <ledMatrix_17>.
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v" Line 100: Assignment to M_ledM5_ledy ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v" Line 115: Assignment to M_ledM6_ledy ignored, since the identifier is never used
+
+Elaborating module <healthbar_8>.
+
+Elaborating module <prng_9>.
+
+Elaborating module <prng2_10>.
+
+Elaborating module <modulus_11>.
+
+Elaborating module <alu_12>.
+
+Elaborating module <adder_23>.
+
+Elaborating module <boolean_24>.
+
+Elaborating module <compare_25>.
+
+Elaborating module <shifter_26>.
+
+Elaborating module <multiplier_27>.
+
+Elaborating module <divider_28>.
+WARNING:HDLCompiler:413 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/dataPathAlu_1.v" Line 292: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/dataPathAlu_1.v" Line 407: Assignment to M_done_q ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 68: Assignment to M_eqm_out ignored, since the identifier is never used
+
+Elaborating module <reset_conditioner_2>.
+
+Elaborating module <counter_4>.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 19. All outputs of instance <button_conditioner1> of block <button_conditioner_13> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 26. All outputs of instance <button_conditioner2> of block <button_conditioner_13> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 33. All outputs of instance <button_conditioner3> of block <button_conditioner_13> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 40. All outputs of instance <button_conditioner4> of block <button_conditioner_13> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 47. All outputs of instance <edge_detector1> of block <edge_detector_3> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 54. All outputs of instance <edge_detector2> of block <edge_detector_3> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 61. All outputs of instance <edge_detector3> of block <edge_detector_3> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 68. All outputs of instance <edge_detector4> of block <edge_detector_3> are unconnected in block <buttonSelect_5>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mojo_top_0>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/mojo_top_0.v".
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/mojo_top_0.v" line 52: Output port <out> of the instance <eqm> is unconnected or connected to loadless signal.
+    Found 27-bit register for signal <M_counter1_q>.
+    Found 27-bit adder for signal <M_counter1_d> created at line 113.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 94
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 94
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 94
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 94
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 94
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 94
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   6 Tristate(s).
+Unit <mojo_top_0> synthesized.
+
+Synthesizing Unit <dataPathAlu_1>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/dataPathAlu_1.v".
+WARNING:Xst:647 - Input <slowclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <M_num1_q>.
+    Found 4-bit register for signal <M_num2_q>.
+    Found 2-bit register for signal <M_operator_q>.
+    Found 7-bit register for signal <M_result_q>.
+    Found 4-bit register for signal <M_firstdigit_q>.
+    Found 4-bit register for signal <M_seconddigit_q>.
+    Found 10-bit register for signal <M_health_val_q>.
+    Found 3-bit register for signal <M_winner_q>.
+    Found 1-bit register for signal <M_answer_q>.
+    Found 30-bit register for signal <M_show_win_q>.
+    Found 4-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_0> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 12                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit adder for signal <n0298> created at line 220.
+    Found 7-bit adder for signal <n0318> created at line 304.
+    Found 7-bit adder for signal <M_result_q[6]_GND_2_o_add_12_OUT> created at line 304.
+    Found 30-bit adder for signal <M_show_win_q[29]_GND_2_o_add_29_OUT> created at line 379.
+WARNING:Xst:737 - Found 1-bit latch for signal <player1_punch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <player2_punch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  69 D-type flip-flop(s).
+	inferred   2 Latch(s).
+	inferred  68 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <dataPathAlu_1> synthesized.
+
+Synthesizing Unit <buttonSelect_5>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 47: Output port <out> of the instance <edge_detector1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 54: Output port <out> of the instance <edge_detector2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 61: Output port <out> of the instance <edge_detector3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/buttonSelect_5.v" line 68: Output port <out> of the instance <edge_detector4> is unconnected or connected to loadless signal.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   3 Latch(s).
+	inferred   3 Multiplexer(s).
+Unit <buttonSelect_5> synthesized.
+
+Synthesizing Unit <pipeline_29>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/pipeline_29.v".
+    Found 1-bit register for signal <M_pipe_q<1>>.
+    Found 1-bit register for signal <M_pipe_q<0>>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pipeline_29> synthesized.
+
+Synthesizing Unit <edge_detector_3>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/edge_detector_3.v".
+    Found 1-bit register for signal <M_last_q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <edge_detector_3> synthesized.
+
+Synthesizing Unit <convertALUFN_6>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/convertALUFN_6.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4x6-bit Read Only RAM for signal <alufn>
+    Summary:
+	inferred   1 RAM(s).
+Unit <convertALUFN_6> synthesized.
+
+Synthesizing Unit <displayModule_7>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v".
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v" line 94: Output port <ledy> of the instance <ledM5> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/displayModule_7.v" line 109: Output port <ledy> of the instance <ledM6> is unconnected or connected to loadless signal.
+    Found 3-bit register for signal <M_matrix_counter_q>.
+    Found 3-bit adder for signal <M_matrix_counter_q[2]_GND_11_o_add_7_OUT> created at line 169.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <displayModule_7> synthesized.
+
+Synthesizing Unit <ledMatrix_17>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/ledMatrix_17.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit 28-to-1 multiplexer for signal <ledx> created at line 23.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <ledMatrix_17> synthesized.
+
+Synthesizing Unit <healthbar_8>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/healthbar_8.v".
+WARNING:Xst:647 - Input <alufnc<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit register for signal <M_b_q>.
+    Found 1-bit register for signal <M_azero_q>.
+    Found 1-bit register for signal <M_bzero_q>.
+    Found 1-bit register for signal <M_gameover_q>.
+    Found 1-bit register for signal <M_winner_q>.
+    Found 1-bit register for signal <M_roundwinner_q>.
+    Found 3-bit register for signal <M_state_q>.
+    Found 5-bit register for signal <M_a_q>.
+    Found finite state machine <FSM_1> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred  23 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <healthbar_8> synthesized.
+
+Synthesizing Unit <prng_9>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/prng_9.v".
+WARNING:Xst:647 - Input <alufnc<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit register for signal <M_out_q>.
+    Found 1-bit register for signal <M_done_q>.
+    Found 1-bit register for signal <M_reroll1_q>.
+    Found 1-bit register for signal <M_reroll2_q>.
+    Found 3-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_2> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <prng_9> synthesized.
+
+Synthesizing Unit <prng2_10>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/prng2_10.v".
+    Found 1-bit register for signal <M_done_q>.
+    Found 2-bit register for signal <M_out_q>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <prng2_10> synthesized.
+
+Synthesizing Unit <modulus_11>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/modulus_11.v".
+    Found 8-bit register for signal <M_mul_value_q>.
+    Found 8-bit register for signal <M_min_value_q>.
+    Found 3-bit register for signal <M_state_q>.
+    Found 8-bit register for signal <M_div_value_q>.
+    Found finite state machine <FSM_3> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit comparator greater for signal <a[7]_GND_25_o_LessThan_1_o> created at line 49
+    Found 8-bit comparator greater for signal <GND_25_o_a[7]_LessThan_2_o> created at line 52
+    Summary:
+	inferred  24 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <modulus_11> synthesized.
+
+Synthesizing Unit <alu_12>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/alu_12.v".
+    Summary:
+	no macro.
+Unit <alu_12> synthesized.
+
+Synthesizing Unit <adder_23>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/adder_23.v".
+    Found 8-bit subtractor for signal <a[7]_b[7]_sub_2_OUT> created at line 24.
+    Found 8-bit adder for signal <a[7]_b[7]_add_0_OUT> created at line 21.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <adder_23> synthesized.
+
+Synthesizing Unit <boolean_24>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/boolean[1]_24.v".
+    Summary:
+Unit <boolean_24> synthesized.
+
+Synthesizing Unit <compare_25>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/compare[1]_25.v".
+    Found 1-bit 4-to-1 multiplexer for signal <_n0030> created at line 11.
+    Found 8-bit comparator equal for signal <a[7]_b[7]_equal_1_o> created at line 21
+    Found 8-bit comparator greater for signal <a[7]_b[7]_LessThan_2_o> created at line 24
+    Found 8-bit comparator lessequal for signal <n0002> created at line 27
+    Summary:
+	inferred   3 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <compare_25> synthesized.
+
+Synthesizing Unit <shifter_26>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/shifter[1]_26.v".
+WARNING:Xst:647 - Input <b<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit shifter logical left for signal <a[7]_b[2]_shift_left_0_OUT> created at line 21
+    Found 8-bit shifter logical right for signal <a[7]_b[2]_shift_right_1_OUT> created at line 24
+    Found 8-bit shifter arithmetic right for signal <a[7]_b[2]_shift_right_2_OUT> created at line 27
+    Found 8-bit 4-to-1 multiplexer for signal <_n0029> created at line 11.
+    Summary:
+	inferred   2 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <shifter_26> synthesized.
+
+Synthesizing Unit <multiplier_27>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/multiplier_27.v".
+    Found 8x8-bit multiplier for signal <n0008> created at line 21.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Multiplexer(s).
+Unit <multiplier_27> synthesized.
+
+Synthesizing Unit <divider_28>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/divider_28.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <divider_28> synthesized.
+
+Synthesizing Unit <div_8u_8u>.
+    Related source file is "".
+    Found 16-bit adder for signal <n0292> created at line 0.
+    Found 16-bit adder for signal <GND_34_o_b[7]_add_1_OUT> created at line 0.
+    Found 15-bit adder for signal <n0296> created at line 0.
+    Found 15-bit adder for signal <GND_34_o_b[7]_add_3_OUT> created at line 0.
+    Found 14-bit adder for signal <n0300> created at line 0.
+    Found 14-bit adder for signal <GND_34_o_b[7]_add_5_OUT> created at line 0.
+    Found 13-bit adder for signal <n0304> created at line 0.
+    Found 13-bit adder for signal <GND_34_o_b[7]_add_7_OUT> created at line 0.
+    Found 12-bit adder for signal <n0308> created at line 0.
+    Found 12-bit adder for signal <GND_34_o_b[7]_add_9_OUT> created at line 0.
+    Found 11-bit adder for signal <n0312> created at line 0.
+    Found 11-bit adder for signal <GND_34_o_b[7]_add_11_OUT> created at line 0.
+    Found 10-bit adder for signal <n0316> created at line 0.
+    Found 10-bit adder for signal <GND_34_o_b[7]_add_13_OUT> created at line 0.
+    Found 9-bit adder for signal <n0320> created at line 0.
+    Found 9-bit adder for signal <GND_34_o_b[7]_add_15_OUT> created at line 0.
+    Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 13-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 12-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Summary:
+	inferred  16 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+	inferred  57 Multiplexer(s).
+Unit <div_8u_8u> synthesized.
+
+Synthesizing Unit <reset_conditioner_2>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/reset_conditioner_2.v".
+    Found 4-bit register for signal <M_stage_q>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <reset_conditioner_2> synthesized.
+
+Synthesizing Unit <counter_4>.
+    Related source file is "C:/Users/1002413/Desktop/LEDMatrix2/work/planAhead/LEDMatrix/LEDMatrix.srcs/sources_1/imports/verilog/counter_4.v".
+    Found 2-bit register for signal <M_ctr_q>.
+    Found 2-bit adder for signal <M_ctr_d> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+Unit <counter_4> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x6-bit single-port Read Only RAM                     : 1
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 25
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 2
+ 12-bit adder                                          : 2
+ 13-bit adder                                          : 2
+ 14-bit adder                                          : 2
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 2
+ 2-bit adder                                           : 1
+ 27-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 30-bit adder                                          : 1
+ 5-bit adder                                           : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 1
+ 8-bit subtractor                                      : 1
+ 9-bit adder                                           : 2
+# Registers                                            : 31
+ 1-bit register                                        : 11
+ 10-bit register                                       : 1
+ 2-bit register                                        : 3
+ 27-bit register                                       : 1
+ 3-bit register                                        : 2
+ 30-bit register                                       : 1
+ 4-bit register                                        : 5
+ 5-bit register                                        : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 3
+ 9-bit register                                        : 1
+# Latches                                              : 5
+ 1-bit latch                                           : 5
+# Comparators                                          : 14
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator lessequal                           : 1
+ 12-bit comparator lessequal                           : 1
+ 13-bit comparator lessequal                           : 1
+ 14-bit comparator lessequal                           : 1
+ 15-bit comparator lessequal                           : 1
+ 16-bit comparator lessequal                           : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 192
+ 1-bit 2-to-1 multiplexer                              : 67
+ 1-bit 4-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 5
+ 30-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 5
+ 5-bit 2-to-1 multiplexer                              : 10
+ 5-bit 28-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 18
+ 7-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 70
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 3
+ 8-bit shifter arithmetic right                        : 1
+ 8-bit shifter logical left                            : 1
+ 8-bit shifter logical right                           : 1
+# Tristates                                            : 6
+ 1-bit tristate buffer                                 : 6
+# FSMs                                                 : 4
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <convertALUFN_6>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alufn> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 6-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <oper>          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <alufn>         |          |
+    -----------------------------------------------------------------------
+Unit <convertALUFN_6> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_4>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
+Unit <counter_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dataPathAlu_1>.
+The following registers are absorbed into counter <M_show_win_q>: 1 register on signal <M_show_win_q>.
+Unit <dataPathAlu_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <displayModule_7>.
+The following registers are absorbed into counter <M_matrix_counter_q>: 1 register on signal <M_matrix_counter_q>.
+Unit <displayModule_7> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mojo_top_0>.
+The following registers are absorbed into counter <M_counter1_q>: 1 register on signal <M_counter1_q>.
+Unit <mojo_top_0> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x6-bit single-port distributed Read Only RAM         : 1
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 12
+ 5-bit adder                                           : 1
+ 7-bit adder carry in                                  : 1
+ 8-bit adder                                           : 1
+ 8-bit adder carry in                                  : 8
+ 8-bit subtractor                                      : 1
+# Counters                                             : 4
+ 2-bit up counter                                      : 1
+ 27-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 30-bit up counter                                     : 1
+# Registers                                            : 98
+ Flip-Flops                                            : 98
+# Comparators                                          : 14
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator lessequal                           : 1
+ 12-bit comparator lessequal                           : 1
+ 13-bit comparator lessequal                           : 1
+ 14-bit comparator lessequal                           : 1
+ 15-bit comparator lessequal                           : 1
+ 16-bit comparator lessequal                           : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 195
+ 1-bit 2-to-1 multiplexer                              : 74
+ 1-bit 4-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 2
+ 3-bit 2-to-1 multiplexer                              : 4
+ 4-bit 2-to-1 multiplexer                              : 5
+ 5-bit 2-to-1 multiplexer                              : 10
+ 5-bit 28-to-1 multiplexer                             : 6
+ 6-bit 2-to-1 multiplexer                              : 18
+ 7-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 69
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 3
+ 8-bit shifter arithmetic right                        : 1
+ 8-bit shifter logical left                            : 1
+ 8-bit shifter logical right                           : 1
+# FSMs                                                 : 4
+# Xors                                                 : 2
+ 1-bit xor2                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <eqm/FSM_0> on signal <M_state_q[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 1001  | 1001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0111  | 0111
+ 0110  | 0110
+ 1000  | 1000
+ 0001  | 0001
+ 1011  | 1011
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <eqm/healthbar/FSM_1> on signal <M_state_q[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 011   | 011
+ 010   | 010
+ 100   | 100
+ 001   | 001
+ 101   | 101
+ 110   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <eqm/prng/FSM_2> on signal <M_state_q[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 100   | 001
+ 010   | 011
+ 011   | 010
+ 001   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <eqm/modulus/FSM_3> on signal <M_state_q[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 101   | 101
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+
+Optimizing unit <mojo_top_0> ...
+
+Optimizing unit <dataPathAlu_1> ...
+
+Optimizing unit <displayModule_7> ...
+
+Optimizing unit <ledMatrix_17> ...
+
+Optimizing unit <healthbar_8> ...
+
+Optimizing unit <prng_9> ...
+
+Optimizing unit <prng2_10> ...
+
+Optimizing unit <modulus_11> ...
+
+Optimizing unit <alu_12> ...
+
+Optimizing unit <div_8u_8u> ...
+WARNING:Xst:2677 - Node <slowclk/M_ctr_q_0> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <slowclk/M_ctr_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <eqm/modulus/M_min_value_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <eqm/modulus/M_min_value_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <eqm/modulus/M_min_value_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <eqm/modulus/M_min_value_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <eqm/modulus/M_div_value_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <eqm/modulus/M_div_value_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <eqm/modulus/M_div_value_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <eqm/modulus/M_div_value_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 18.
+FlipFlop eqm/M_show_win_q_29 has been replicated 1 time(s)
+FlipFlop eqm/M_state_q_FSM_FFd1 has been replicated 4 time(s)
+FlipFlop eqm/M_state_q_FSM_FFd2 has been replicated 4 time(s)
+FlipFlop eqm/M_state_q_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop eqm/M_state_q_FSM_FFd4 has been replicated 4 time(s)
+FlipFlop eqm/modulus/M_state_q_FSM_FFd1 has been replicated 3 time(s)
+FlipFlop eqm/modulus/M_state_q_FSM_FFd2 has been replicated 4 time(s)
+FlipFlop eqm/modulus/M_state_q_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop eqm/prng/M_state_q_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop eqm/prng/M_state_q_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop reset_cond/M_stage_q_3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 193
+ Flip-Flops                                            : 193
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-------------------------------------------------------------------------------+--------------------------------+-------+
+Clock Signal                                                                   | Clock buffer(FF name)          | Load  |
+-------------------------------------------------------------------------------+--------------------------------+-------+
+clk                                                                            | BUFGP                          | 193   |
+eqm/M_state_q[3]_GND_36_o_Mux_92_o(eqm/Mmux_M_state_q[3]_GND_36_o_Mux_92_o11:O)| NONE(*)(eqm/player1_punch)     | 2     |
+eqm/M_buttonSelect_taking_input(eqm/M_state_q_FSM_FFd1-In41:O)                 | NONE(*)(eqm/buttonSelect/num_2)| 3     |
+-------------------------------------------------------------------------------+--------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 21.807ns (Maximum Frequency: 45.857MHz)
+   Minimum input arrival time before clock: 6.203ns
+   Maximum output required time after clock: 13.632ns
+   Maximum combinational path delay: No path found
+
+=========================================================================

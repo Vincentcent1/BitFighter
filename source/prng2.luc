@@ -1,0 +1,44 @@
+/*************************************
+A pseudo random number generator that produce a 2 bit random number when prompted with generate == 1
+Use seed to make different instance of the random number generator.   
+  args = SEED (To make a unique instance of the random number generator)
+  input = generate (0/1)
+  output = 2 bit random number (00 --> +, 01 --> -, 10 --> *, 11--> /)
+   
+   **************************************/
+module prng2 #(
+  SEED = 2b01: SEED.WIDTH == 2
+    )(
+    input clk,  // clock
+    input rst,
+    input next,
+    output number[2],
+    output prngdone
+  ) {
+
+  .clk(clk)  {
+    dff out[2], done; //the two bit to be xored
+    }
+  sig temp;
+  sig temp_out[2];
+  
+  always {
+    prngdone = done.q;
+    number = out.q;
+    if (next == 1 & ~done.q) {
+      temp = out.q[0] ^ out.q[1];
+      temp_out = out.q >> 1;  
+      temp_out[1] = temp;
+      out.d = temp_out; 
+      done.d = 1;
+    } else if (next == 0){
+      done.d = 0;
+    }
+    
+    if (rst){
+      out.d = SEED;
+      done.d = 0;
+      }
+    
+  }
+}

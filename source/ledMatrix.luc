@@ -1,0 +1,756 @@
+module ledMatrix(
+    input clk,  // clock
+    input rst,  // reset
+    input digit[5],
+    output ledx[5],
+    output ledy[8],
+    input cycle[3]
+  ) {
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst){
+    }
+  }
+
+  
+  always {
+      ledx = 5b00000;
+      ledy = 8b00000000;
+    
+    case(digit) {
+5d0:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00110;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01001;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00110;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d1:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00010;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00110;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00010;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00010;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d2:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00001;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01111;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b01111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d3:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b01111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d4:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01001;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00001;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d5:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b01111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d6:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b01111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d7:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00010;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00100;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00100;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00100;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d8:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b01111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d9:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00001;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d10:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00100;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01110;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00100;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d11:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00000;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d12:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01010;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00100;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d13:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00100;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01110;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00000;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00100;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d14:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01110;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00000;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01110;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d15:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00011;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00010;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00010;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00010;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00011;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d16:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b10001;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01001;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b10001;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d17:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00011;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00010;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00011;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00010;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00010;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d18:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b11001;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b11001;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00001;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00001;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00001;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d19:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b11100;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b11100;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00000;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d20:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b11110;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b10010;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00110;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00100;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00100;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d21:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00111;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00101;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00111;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00100;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00100;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00100;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d22:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b01000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b01000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01010;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01010;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00111;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d23:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b10101;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b10101;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b10101;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b10101;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b10101;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00101;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d24:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00010;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b10010;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b01010;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b01010;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b01010;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00110;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d25:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b11101;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b10001;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b11101;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00101;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00100;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b11101;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+5d26:
+case(cycle) {
+3d0:
+   ledx = 5b00000;
+   ledy = 8b10000000;
+3d1:
+   ledx = 5b00000;
+   ledy = 8b01000000;
+3d2:
+   ledx = 5b00000;
+   ledy = 8b00100000;
+3d3:
+   ledx = 5b00000;
+   ledy = 8b00010000;
+3d4:
+   ledx = 5b00000;
+   ledy = 8b00001000;
+3d5:
+   ledx = 5b00000;
+   ledy = 8b00000100;
+3d6:
+   ledx = 5b00000;
+   ledy = 8b00000010;
+3d7:
+   ledx = 5b00000;
+   ledy = 8b00000001;
+}
+}
+
+
+}
+}

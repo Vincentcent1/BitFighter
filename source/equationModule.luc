@@ -1,0 +1,8 @@
+module equationModule (
+    input clk,  // clock
+    input rst  // reset
+  ) {
+
+    always {
+  }
+}

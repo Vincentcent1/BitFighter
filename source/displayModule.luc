@@ -1,0 +1,96 @@
+module displayModule (
+    input clk,  // clock
+    input rst,  // reset
+    input digit1[5],
+    input digit2[5],
+    input digit3[5],
+    input digit4[5],
+    input digit5[5],
+    input digit6[5],
+    output led1x[8],
+    output led1y[8],
+    output led2x[8],
+    output led2y[8],
+    output led3x[8],
+    output led3y[8],
+    output led4x[8],
+    output led4y[8]
+
+  ) {
+  
+  ledMatrix ledM;
+  ledMatrix ledM2;
+  ledMatrix ledM3;
+  ledMatrix ledM4;
+  ledMatrix ledM5;
+  ledMatrix ledM6;
+  
+  dff matrix_counter[3](.clk(clk), .rst(rst));
+  
+  always {
+    // Initialization code
+    ledM.clk = clk;
+    ledM.rst = rst; 
+    ledM.cycle = matrix_counter.q;
+    ledM2.clk = clk;
+    ledM2.rst = rst;
+    ledM2.cycle = matrix_counter.q;
+    ledM3.clk = clk;
+    ledM3.rst = rst;
+    ledM3.cycle = matrix_counter.q;
+    ledM4.clk = clk;
+    ledM4.rst = rst; 
+    ledM4.cycle = matrix_counter.q;
+    ledM5.clk = clk;
+    ledM5.rst = rst;
+    ledM5.cycle = matrix_counter.q;
+    ledM6.clk = clk;
+    ledM6.rst = rst;
+    ledM6.cycle = matrix_counter.q;
+    
+    ledM.digit = digit1;
+    ledM2.digit = digit2;
+    ledM3.digit = digit3;
+    ledM4.digit = digit4;
+    ledM5.digit = digit5;
+    ledM6.digit = digit6;
+
+    led1y = 8d0; 
+    led1x = 8d0;
+    led2y = 8d0;
+    led2x = 8d0;
+    led3y = 8d0; 
+    led3x = 8d0;
+    led4y = 8d0;
+    led4x = 8d0;
+  
+    // We flip x and y because of hardware :D    
+    led1x = ledM.ledy; 
+    led2x = ledM2.ledy; 
+    led3x = ledM3.ledy;
+    led4x = ledM4.ledy; 
+
+    // First digit
+    led1y[7:3] = ~ledM.ledx;
+    // Second digit
+    led1y[2:0] = ~ledM2.ledx[4:2];
+    led2y[7:6] = ~ledM2.ledx[1:0];
+    // Third digit
+    led2y[5:1] = ~ledM3.ledx;
+    // Fourth digit
+    led2y[0] = ~ledM4.ledx[4];
+    led3y[7:4] = ~ledM4.ledx[3:0];
+    // Fifth digit
+    led3y[3:0] = ~ledM5.ledx[4:1];
+    led4y[7] = ~ledM5.ledx[0];
+    // Sixth digit
+    led4y[6:2] = ~ledM6.ledx[4:0];
+    led4y[1:0] = 2b11; // blank
+    
+    // Skip first and last row
+    matrix_counter.d = matrix_counter.q + 1;
+    if(matrix_counter.q == 7) {
+      matrix_counter.d = 1;
+    }
+  }
+}

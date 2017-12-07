@@ -1,0 +1,91 @@
+/*************************************
+A pseudo random number generator that produce a 4 bit random number when prompted with generate == 1
+Use seed to make different instance of the random number generator.   
+  args = SEED (To make a unique instance of the random number generator)
+  input = generate (0/1)
+  output = 4 bit Random number
+  Reference link: https://en.wikipedia.org/wiki/Linear-feedback_shift_register
+   **************************************/
+
+/*************************************
+A pseudo random number generator that produce a 4 bit random number when prompted with generate == 1
+Use seed to make different instance of the random number generator.   
+  args = SEED (To make a unique instance of the random number generator)
+  input = generate (0/1)
+  output = 4 bit Random number
+  Reference link: https://en.wikipedia.org/wiki/Linear-feedback_shift_register
+   **************************************/
+module prngb #(
+  SEED = 4b1000: SEED.WIDTH == 4
+    )(
+    input clk,  // clock
+    input rst,
+    input next,
+    output number[4],
+    input alufnc[8],
+    output alufn[6],
+    output alufna[8],
+    output alufnb[8]   
+  ) {
+
+  .clk(clk)  {
+    dff out[4]; //the two bit to be xored
+    dff reroll1;
+    fsm state = {CHECK1,C,REROLL,WAIT}; 
+    }
+  sig done;
+  sig temp;
+  sig temp_out[4];
+  
+  always {
+    alufn = 6h00;
+    alufna = 8h00;
+    alufnb = 8h00;
+    number = out.q;
+    done = next;
+    case(state.q){
+      state.REROLL:
+        //reroll the number and go back to check again
+        alufn = Inst.AND;
+        alufna = out.q[0];
+        alufnb = out.q[1];
+        temp = alufnc[0];
+        //Right shift by 1;
+        temp_out[2:0] = out.q[3:1];
+        temp_out[3] = temp;     
+        out.d = temp_out;
+        state.d = state.CHECK1;      
+      state.CHECK1: //check if output is > 3
+        alufn = Inst.CMPLE;
+        alufna = out.q[1:0];
+        alufnb = 2d3;
+        reroll1.d = alufnc[0];
+        state.d = state.C;
+      state.C:
+        //if output is > 9, go to reroll
+        if(~reroll1.q){
+          state.d = state.REROLL; 
+        } else {
+          //if not, end and WAIT;
+          done = 1;
+          state.d = state.WAIT;
+        } 
+      state.WAIT:
+        if  (~next){ //if next is  0, set done back to zero to get ready for next request
+          done = 0;
+          }
+        if (next & ~done){ //if next is 1 and done is zero, it means this is the next request after this one.
+          state.d = state.CHECK1;
+        } else { // else wait for next request
+          state.d = state.WAIT;
+        }
+      default:
+        alufn = 6h00;
+        alufna = 8h00;
+        alufnb = 8h00;
+    }
+    if (rst){
+      out.d = SEED;
+      }        
+  }
+}

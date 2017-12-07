@@ -1,0 +1,73 @@
+module modulus (
+     input a[8],
+     input clk, 
+     input rst,
+     input alufnc[8],
+     output alufn[6],
+     output alufna[8],
+     output alufnb[8],
+     output out[2][8], 
+     input start_mod, 
+     output done
+   ) { 
+ .clk(clk){
+    .rst(rst){
+    fsm state = {IDLE, DIV, MUL, MINUS, SEND, POS_COUNTER};
+    dff div_value[8];
+    dff mul_value[8];
+    dff min_value[8];
+      }
+  }
+ 
+   always { 
+     alufn = 6h00;
+     alufna = 8h00;
+     alufnb = 8h00;
+     done = 0;
+     case(state.q) {
+      state.IDLE:
+        if (start_mod) {
+          done = 0;
+          if (a < 100) {
+            state.d = state.DIV;
+          } else if (a > 100) {
+            state.d = state.POS_COUNTER;
+          }
+        }
+      state.POS_COUNTER:
+         done = 0;
+         alufn = Inst.SUB;
+         alufna = 2b00000000;
+         alufnb = a;
+         min_value.d = alufnc;
+         div_value.d = 10d11;
+         state.d = state.SEND;
+      state.DIV:
+         done = 0;
+         alufn = Inst.DIV;
+         alufna = a;
+         alufnb = 10;
+         div_value.d = alufnc;
+         state.d = state.MUL;
+      state.MUL:
+         done = 0;
+         alufn = Inst.MUL;
+         alufna = div_value.q;
+         alufnb = 10;
+         mul_value.d = alufnc;
+         state.d = state.MINUS;
+      state.MINUS:
+         done = 0;
+         alufn = Inst.SUB;
+         alufna = a;
+         alufnb = mul_value.q;
+         min_value.d = alufnc;
+         state.d = state.SEND;
+      state.SEND:
+         done = 1;
+         state.d = state.IDLE;
+     } 
+    out[0][7:0] = div_value.q;
+    out[1][7:0] = min_value.q;
+   } 
+ } 

@@ -1,0 +1,238 @@
+module dataPathAlu (
+    input clk,  // clock
+    input rst,  // reset
+    input slowclk,
+    output led1x[8],
+    output led1y[8],
+    output led2x[8],
+    output led2y[8],
+    output led3x[8],
+    output led3y[8],
+    output led4x[8],
+    output led4y[8],
+    input button[4],
+    output player1_punch,
+    output player2_punch,
+    input generateRandom,
+    output out, 
+    output heath_points[10]
+  ) {
+
+  .clk(clk) {.rst(rst) {
+      fsm state = {START, PRNG1, PRNG2, CALCANSWER, RESULT, DISPLAY, EVALUATE, MODULUS, HEALTHBAR, IDLE, FIX_POINTS, END, WAITFORANS};       // states
+      dff expected, num1[4], num2[4], operator[2], result[7], counter1[1], firstdigit[4], seconddigit[4], right[1], health_val[10], winner[3], answer, show_win[30];
+       
+      //dff addr [23];                   // current address
+     // dff error [7];                   // number of errors
+      //dff seed [32];                   // seed for each run
+
+      buttonSelect buttonSelect;
+      convertALUFN convert;
+      displayModule m1;      
+      }
+  }
+  .clk(clk) {.rst(rst) {
+      healthbar healthbar;
+      prng prng;
+      prng2 operations;     
+      modulus modulus;       
+      dff counterx[27], done;
+        }
+      } 
+  alu alu;     
+  always {
+//    if (counter.q[25] == 1) {
+//      counter.d = 0;
+//    }
+    counterx.d = counterx.q + 1;
+    expected.d = expected.q +1;
+    m1.digit1 = num1.q;
+    m1.digit2 = operator.q + 10;
+    m1.digit3 = num2.q;    
+    m1.digit4 = 14;
+    m1.digit5 = firstdigit.q;
+    m1.digit6 = seconddigit.q;
+    
+    heath_points = health_val.q;
+    led1x = m1.led1x;
+    led1y = m1.led1y;
+    led2x = m1.led2x;
+    led2y = m1.led2y;
+    led3x = m1.led3x;
+    led3y = m1.led3y;
+    led4x = m1.led4x;
+    led4y = m1.led4y; 
+    out = 0;
+    healthbar.ready = 0;
+    healthbar.alufnc = 0;
+    healthbar.button = winner.q;
+    healthbar.answer = 0;
+    healthbar.should_rst = 0;
+    alu.a = 0;
+    alu.b = 0;
+    alu.alufn = 0;
+    prng.alufnc = 0;
+    prng.next = 0;    
+    operations.next = 0;
+    //operations.alufnc = 0;
+    buttonSelect.taking_input = 0;
+    buttonSelect.btn = 0;
+    convert.oper = 0;
+    modulus.start_mod = 0;
+    modulus.alufnc = 0;
+    modulus.a = 0;
+         
+    
+    case(state.q) {
+      state.START:
+        m1.digit1 = 15;
+        m1.digit2 = 16;
+        m1.digit3 = 17;
+        m1.digit4 = 18;
+        m1.digit5 = 19;
+        m1.digit6 = 20;    
+      if (button[0] | button[1] | button[2] | button[3]) {
+        health_val.d = 10b1111111111; //game started, set to full health
+        state.d = state.IDLE;
+        }
+      state.PRNG1: //getting number
+        prng.alufnc = alu.out;
+        prng.next = 1;
+        alu.alufn = prng.alufn;
+        alu.a = prng.alufna;
+        alu.b = prng.alufnb;
+        if (prng.prngdone){
+          prng.next = 0;
+          state.d = state.PRNG2;
+          num1.d = prng.number[3:0];
+          num2.d = prng.number[8:5];          
+        }                        
+      state.PRNG2: //getting equations
+        //operations.alufnc = alu.out;
+        operations.next = 1;  
+
+        
+        //alu.alufn = operations.alufn;
+        //alu.a = operations.alufna;
+        //alu.b = operations.alufnb;
+        if (operations.prngdone){
+          state.d = state.CALCANSWER;
+          operations.next = 0;
+          operator.d = operations.number[1:0];          
+        }
+      state.CALCANSWER:
+        convert.oper = operator.q;
+        alu.alufn = convert.alufn;
+        alu.a = num1.q;
+        alu.b = num2.q;
+        result.d = alu.out;
+        state.d = state.RESULT;   
+      state.RESULT:   
+        prng.alufnc = alu.out;
+        prng.next = 1;
+        alu.alufn = prng.alufn;
+        alu.a = prng.alufna;
+        alu.b = prng.alufnb;      
+        if (prng.prngdone){
+          if (prng.number[0] == 1) {
+            prng.next = 0;
+            result.d = result.q + prng.number[3:1] + 1;
+            answer.d = 0;
+            state.d = state.MODULUS;
+          } else {
+            answer.d = 1;
+            state.d = state.MODULUS;
+          }
+        }
+      state.MODULUS:
+        modulus.start_mod = 1;
+        alu.alufn = modulus.alufn;
+        alu.a = modulus.alufna;
+        alu.b = modulus.alufnb;
+        modulus.alufnc = alu.out;
+        modulus.a = result.q;
+        if (modulus.done){ // display the answer
+          firstdigit.d = modulus.out[0][3:0];
+          seconddigit.d = modulus.out[1][3:0];
+          state.d = state.EVALUATE;          
+        }   
+
+      state.EVALUATE:
+        buttonSelect.btn = button;
+        buttonSelect.taking_input = 1;
+        winner.d  = buttonSelect.num;
+        
+        if (winner.q != 0) {
+          state.d = state.HEALTHBAR;
+        } else {
+          state.d = state.EVALUATE;
+        }
+        healthbar.button = winner.q;
+      state.HEALTHBAR:
+        
+        healthbar.answer = answer.q;
+        alu.alufn = healthbar.alufn;
+        alu.a = healthbar.alufna;
+        alu.b = healthbar.alufnb;
+        healthbar.alufnc = alu.out; //TODO set to the leds        
+
+        healthbar.ready = 1;
+        if (healthbar.done != 0) {
+        health_val.d = healthbar.out;
+          if (healthbar.roundwinnerout){
+            player2_punch = 1;
+            player1_punch = 0;
+          } else {
+            player1_punch = 1;
+            player2_punch = 0;
+          }
+        state.d = state.IDLE;
+        winner.d = 0;
+        }
+        
+      state.IDLE: //start is 1 when the user press the button and the module is ready to evaluate
+        if (healthbar.gameoverout){
+          state.d = state.END;  
+        } else if (generateRandom && winner.q == 0) {
+          state.d = state.PRNG1;
+        } else {
+          state.d = state.IDLE;
+        }
+      state.END:
+        m1.digit1 = 21;
+        m1.digit3 = 22;
+        m1.digit4 = 23;
+        m1.digit5 = 24;
+        m1.digit6 = 25;       
+        if (healthbar.winnerout){ //21,1/2,22,23,24,25 //If 0, A wins, if 1 B wins
+          m1.digit2 = 2; 
+        } else {
+          m1.digit2 = 1;
+        }
+        show_win.d = show_win.q +1;
+        
+        if (show_win.q[29] == 1) {
+          healthbar.should_rst = 1;
+          state.d = state.START;
+          show_win.d = 0;
+          expected.d = 0;
+          num1.d = 0;
+          num2.d = 0;
+          operator.d = 0;
+          result.d = 0;
+          counter1.d = 0;
+          firstdigit.d = 0;
+          seconddigit.d = 0;
+          right.d = 0;
+          health_val.d = 0;
+          winner.d = 0;
+          answer.d = 0;
+          show_win.d = 0;
+        }   
+      default: //doesnt do anything
+        alu.alufn = 6h00;
+        alu.a = 8h00;
+        alu.b = 8h00;
+    }
+  }
+}

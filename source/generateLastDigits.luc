@@ -1,0 +1,17 @@
+module generateLastDigits (
+    input clk,  // clock
+    input rst,  // reset
+    input number[7],
+    output out
+  ) {
+
+  always {
+    out = 0;
+    
+    
+    
+    
+    
+    
+  }
+}

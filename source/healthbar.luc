@@ -1,0 +1,139 @@
+module healthbar (
+    input clk,  // clock
+    input rst,  // reset
+    input ready, // ready to take in input
+    input button[3], //winner = 0 --> A wins the round
+                  //winner = 1 --> B wins the round
+    input answer,
+    input alufnc[8],
+    output gameoverout,
+    output out[10],    
+    output alufn[6],
+    output alufna[8],
+    output alufnb[8],
+    output done,
+    output roundwinnerout,
+    output winnerout,
+    input should_rst
+    
+  ) {
+  .clk(clk){
+    dff a[5], b[5]; // Player A health, Player B health //might need to change the clock.
+    dff azero, bzero, gameover, winner, roundwinner;
+    .rst(rst){
+    fsm state = {WAIT,A,B,C, GAMEOVER, SEND, END};
+      }
+  }
+  sig temp;
+  
+  always {
+    roundwinnerout = roundwinner.q;
+    gameoverout = gameover.q;
+    out[4:0] = a.q;
+    out[9:5] = b.q;
+    done = 0;
+    alufn = 0;
+    alufna = 0;
+    alufnb = 0;
+    winnerout = winner.q;
+    //if (bzero.q == 1|azero.q == 1){
+    //  gameover = 1;
+    //  temp = 1;
+    //} else {
+    //  gameover = 0;
+    //  temp = 0;
+    //}    
+    case(state.q) {
+      state.A: //check if a health is 0
+        alufn = Inst.CMPEQ;
+        alufna = a.q;
+        alufnb = 8h00;
+        azero.d = alufnc[0];
+        state.d = state.B;
+      state.B: //check if b health is zero
+        alufn = Inst.CMPEQ;
+        alufna = b.q;
+        alufnb = 8h00;        
+        bzero.d = alufnc[0];        
+        state.d = state.GAMEOVER;
+        
+      state.GAMEOVER:
+        if (bzero.q){
+          gameover.d = 1;
+          winner.d = 0;
+          state.d = state.END;           
+        } else if (azero.q) {
+          gameover.d = 1;
+          winner.d = 1; 
+          state.d = state.END;           
+        } else {
+          state.d = state.SEND;
+          }
+         
+      state.C: //reducing the health
+        gameover.d = 0;
+          if(answer){ //expecting correct answer
+            if (button == 1 | button == 4){ // A chose correct answer or B chose wrong answer
+              alufn = Inst.SHL;            // A wins. B - 1
+              alufna = b.q;
+              alufnb = 1;
+              b.d = alufnc[4:0];               
+              roundwinner.d = 0;
+            } else if (button == 2 | button == 3){                     //B chose correct answer or A chose wrong answer
+              alufn = Inst.SHL;          // B wins, A - 1
+              alufna = a.q;
+              alufnb = 1;
+              a.d = alufnc[4:0];
+              roundwinner.d = 1;            
+            }
+          } else {    //expecting wrong answer
+            if (button == 2 | button == 3){ //A chose wrong or B chose correct
+              alufn = Inst.SHL;            // A wins, B - 1
+              alufna = b.q;
+              alufnb = 1;
+              b.d = alufnc[4:0];
+              roundwinner.d = 0;               
+            } else if (button == 1 | button == 4){                    //B chose wrong or A chose correct
+              alufn = Inst.SHL;        // B wins, A -1.
+              alufna = a.q;
+              alufnb = 1;
+              a.d = alufnc[4:0];                         
+              roundwinner.d = 1;
+            }           
+          }
+        state.d = state.A;
+        
+      state.WAIT: 
+        gameover.d = 0; 
+        if  (ready == 1) {//When ready, go to A
+          state.d = state.C;
+          done = 0;
+          } else {
+          state.d = state.WAIT;
+          }
+      state.SEND:
+        done = 1;
+        state.d = state.WAIT;
+      state.END:
+        done = 1;
+        
+       
+    }          
+    if(rst | should_rst){
+      a.d = 5h1F;
+      b.d = 5h1F;
+      alufn = 6h00;
+      alufna = 8h00;
+      alufnb = 8h00;
+      temp = 0;
+      done = 0;
+      gameover.d = 0;
+      winner.d = 0;
+      state.d = state.WAIT;
+      azero.d = 1;
+      bzero.d = 0;
+      gameover.d = 0;
+      winner.d = 0;
+      }
+    }
+  }

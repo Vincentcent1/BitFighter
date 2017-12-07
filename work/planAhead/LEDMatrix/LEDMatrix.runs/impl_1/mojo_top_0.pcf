@@ -1,0 +1,184 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Dec 07 23:50:22 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "player1_hp[0]" LOCATE = SITE "P141" LEVEL 1;
+COMP "player1_hp[1]" LOCATE = SITE "P139" LEVEL 1;
+COMP "player1_hp[2]" LOCATE = SITE "P137" LEVEL 1;
+COMP "player1_hp[3]" LOCATE = SITE "P133" LEVEL 1;
+COMP "player1_hp[4]" LOCATE = SITE "P131" LEVEL 1;
+COMP "player2_hp[0]" LOCATE = SITE "P132" LEVEL 1;
+COMP "player2_hp[1]" LOCATE = SITE "P134" LEVEL 1;
+COMP "player2_hp[2]" LOCATE = SITE "P138" LEVEL 1;
+COMP "player2_hp[3]" LOCATE = SITE "P140" LEVEL 1;
+COMP "player2_hp[4]" LOCATE = SITE "P142" LEVEL 1;
+COMP "player1_punch" LOCATE = SITE "P118" LEVEL 1;
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
+COMP "player2_punch" LOCATE = SITE "P119" LEVEL 1;
+COMP "player1_no" LOCATE = SITE "P124" LEVEL 1;
+COMP "player2_no" LOCATE = SITE "P127" LEVEL 1;
+COMP "player1_yes" LOCATE = SITE "P123" LEVEL 1;
+COMP "player2_yes" LOCATE = SITE "P126" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
+COMP "led1x[0]" LOCATE = SITE "P21" LEVEL 1;
+COMP "led1x[1]" LOCATE = SITE "P23" LEVEL 1;
+COMP "led1x[2]" LOCATE = SITE "P34" LEVEL 1;
+COMP "led1x[3]" LOCATE = SITE "P35" LEVEL 1;
+COMP "led1y[0]" LOCATE = SITE "P50" LEVEL 1;
+COMP "led1x[4]" LOCATE = SITE "P40" LEVEL 1;
+COMP "led1y[1]" LOCATE = SITE "P26" LEVEL 1;
+COMP "led1x[5]" LOCATE = SITE "P30" LEVEL 1;
+COMP "led1y[2]" LOCATE = SITE "P51" LEVEL 1;
+COMP "led1x[6]" LOCATE = SITE "P27" LEVEL 1;
+COMP "led1y[3]" LOCATE = SITE "P32" LEVEL 1;
+COMP "led1x[7]" LOCATE = SITE "P29" LEVEL 1;
+COMP "led2x[0]" LOCATE = SITE "P143" LEVEL 1;
+COMP "led1y[4]" LOCATE = SITE "P22" LEVEL 1;
+COMP "led2x[1]" LOCATE = SITE "P1" LEVEL 1;
+COMP "led1y[5]" LOCATE = SITE "P41" LEVEL 1;
+COMP "led2x[2]" LOCATE = SITE "P11" LEVEL 1;
+COMP "led1y[6]" LOCATE = SITE "P24" LEVEL 1;
+COMP "led2x[3]" LOCATE = SITE "P12" LEVEL 1;
+COMP "led1y[7]" LOCATE = SITE "P33" LEVEL 1;
+COMP "led2y[0]" LOCATE = SITE "P16" LEVEL 1;
+COMP "led2x[4]" LOCATE = SITE "P14" LEVEL 1;
+COMP "led2y[1]" LOCATE = SITE "P5" LEVEL 1;
+COMP "led2x[5]" LOCATE = SITE "P8" LEVEL 1;
+COMP "led2y[2]" LOCATE = SITE "P17" LEVEL 1;
+COMP "led2x[6]" LOCATE = SITE "P6" LEVEL 1;
+COMP "led2y[3]" LOCATE = SITE "P9" LEVEL 1;
+COMP "led2x[7]" LOCATE = SITE "P7" LEVEL 1;
+COMP "led3x[0]" LOCATE = SITE "P87" LEVEL 1;
+COMP "led2y[4]" LOCATE = SITE "P144" LEVEL 1;
+COMP "led3x[1]" LOCATE = SITE "P84" LEVEL 1;
+COMP "led2y[5]" LOCATE = SITE "P15" LEVEL 1;
+COMP "led3x[2]" LOCATE = SITE "P74" LEVEL 1;
+COMP "led2y[6]" LOCATE = SITE "P2" LEVEL 1;
+COMP "led3x[3]" LOCATE = SITE "P75" LEVEL 1;
+COMP "led2y[7]" LOCATE = SITE "P10" LEVEL 1;
+COMP "led3y[0]" LOCATE = SITE "P57" LEVEL 1;
+COMP "led3x[4]" LOCATE = SITE "P66" LEVEL 1;
+COMP "led3y[1]" LOCATE = SITE "P82" LEVEL 1;
+COMP "led3x[5]" LOCATE = SITE "P81" LEVEL 1;
+COMP "led3y[2]" LOCATE = SITE "P120" LEVEL 1;
+COMP "led3x[6]" LOCATE = SITE "P83" LEVEL 1;
+COMP "led3y[3]" LOCATE = SITE "P78" LEVEL 1;
+COMP "led3x[7]" LOCATE = SITE "P80" LEVEL 1;
+COMP "led4x[0]" LOCATE = SITE "P114" LEVEL 1;
+COMP "led3y[4]" LOCATE = SITE "P88" LEVEL 1;
+COMP "led4x[1]" LOCATE = SITE "P111" LEVEL 1;
+COMP "led3y[5]" LOCATE = SITE "P67" LEVEL 1;
+COMP "led4x[2]" LOCATE = SITE "P97" LEVEL 1;
+COMP "led3y[6]" LOCATE = SITE "P85" LEVEL 1;
+COMP "led4x[3]" LOCATE = SITE "P98" LEVEL 1;
+COMP "led3y[7]" LOCATE = SITE "P79" LEVEL 1;
+COMP "led4y[0]" LOCATE = SITE "P92" LEVEL 1;
+COMP "led4x[4]" LOCATE = SITE "P94" LEVEL 1;
+COMP "led4y[1]" LOCATE = SITE "P104" LEVEL 1;
+COMP "led4x[5]" LOCATE = SITE "P102" LEVEL 1;
+COMP "led4y[2]" LOCATE = SITE "P93" LEVEL 1;
+COMP "led4x[6]" LOCATE = SITE "P105" LEVEL 1;
+COMP "led4y[3]" LOCATE = SITE "P99" LEVEL 1;
+COMP "led4x[7]" LOCATE = SITE "P101" LEVEL 1;
+COMP "led4y[4]" LOCATE = SITE "P115" LEVEL 1;
+COMP "led4y[5]" LOCATE = SITE "P95" LEVEL 1;
+COMP "led4y[6]" LOCATE = SITE "P112" LEVEL 1;
+COMP "led4y[7]" LOCATE = SITE "P100" LEVEL 1;
+TIMEGRP clk = BEL "M_counter1_q_0" BEL "M_counter1_q_1" BEL "M_counter1_q_2"
+        BEL "M_counter1_q_3" BEL "M_counter1_q_4" BEL "M_counter1_q_5" BEL
+        "M_counter1_q_6" BEL "M_counter1_q_7" BEL "M_counter1_q_8" BEL
+        "M_counter1_q_9" BEL "M_counter1_q_10" BEL "M_counter1_q_11" BEL
+        "M_counter1_q_12" BEL "M_counter1_q_13" BEL "M_counter1_q_14" BEL
+        "M_counter1_q_15" BEL "M_counter1_q_16" BEL "M_counter1_q_17" BEL
+        "M_counter1_q_18" BEL "M_counter1_q_19" BEL "M_counter1_q_20" BEL
+        "M_counter1_q_21" BEL "M_counter1_q_22" BEL "M_counter1_q_23" BEL
+        "M_counter1_q_24" BEL "M_counter1_q_25" BEL "M_counter1_q_26" BEL
+        "eqm/M_result_q_2" BEL "eqm/M_result_q_3" BEL "eqm/M_result_q_4" BEL
+        "eqm/M_result_q_5" BEL "eqm/M_result_q_6" BEL "eqm/M_show_win_q_10"
+        BEL "eqm/M_show_win_q_11" BEL "eqm/M_show_win_q_12" BEL
+        "eqm/M_show_win_q_13" BEL "eqm/M_show_win_q_14" BEL
+        "eqm/M_show_win_q_15" BEL "eqm/M_show_win_q_20" BEL
+        "eqm/M_show_win_q_16" BEL "eqm/M_show_win_q_21" BEL
+        "eqm/M_show_win_q_17" BEL "eqm/M_show_win_q_22" BEL
+        "eqm/M_show_win_q_18" BEL "eqm/M_show_win_q_23" BEL
+        "eqm/M_show_win_q_19" BEL "eqm/M_show_win_q_24" BEL
+        "eqm/M_show_win_q_25" BEL "eqm/M_show_win_q_26" BEL
+        "eqm/M_show_win_q_27" BEL "eqm/M_show_win_q_28" BEL
+        "eqm/M_show_win_q_29" BEL "eqm/M_answer_q" BEL
+        "eqm/prng/M_state_q_FSM_FFd2" BEL "eqm/prng/M_state_q_FSM_FFd3" BEL
+        "eqm/prng/M_state_q_FSM_FFd1" BEL "eqm/prng/M_done_q" BEL
+        "eqm/prng/M_out_q_8" BEL "eqm/prng/M_out_q_7" BEL "eqm/prng/M_out_q_6"
+        BEL "eqm/prng/M_out_q_5" BEL "eqm/prng/M_out_q_4" BEL
+        "eqm/prng/M_out_q_3" BEL "eqm/prng/M_out_q_2" BEL "eqm/prng/M_out_q_1"
+        BEL "eqm/prng/M_out_q_0" BEL "eqm/prng/M_reroll2_q" BEL
+        "eqm/prng/M_reroll1_q" BEL "eqm/prng/M_state_q_FSM_FFd1_1" BEL
+        "eqm/prng/M_state_q_FSM_FFd3_1" BEL "eqm/prng/M_state_q_FSM_FFd3_2"
+        BEL "eqm/M_show_win_q_29_1" BEL "eqm/M_state_q_FSM_FFd1_1" BEL
+        "eqm/M_state_q_FSM_FFd1_2" BEL "eqm/M_state_q_FSM_FFd1_3" BEL
+        "eqm/M_state_q_FSM_FFd1_4" BEL "eqm/M_state_q_FSM_FFd2_1" BEL
+        "eqm/M_state_q_FSM_FFd2_2" BEL "eqm/M_state_q_FSM_FFd2_3" BEL
+        "eqm/M_state_q_FSM_FFd2_4" BEL "eqm/M_seconddigit_q_0" BEL
+        "eqm/M_seconddigit_q_1" BEL "eqm/M_seconddigit_q_2" BEL
+        "eqm/M_seconddigit_q_3" BEL "eqm/M_state_q_FSM_FFd3_1" BEL
+        "eqm/M_state_q_FSM_FFd3_2" BEL "eqm/M_state_q_FSM_FFd3_3" BEL
+        "eqm/M_state_q_FSM_FFd4_1" BEL "eqm/M_state_q_FSM_FFd4_2" BEL
+        "eqm/M_state_q_FSM_FFd4_3" BEL "eqm/M_state_q_FSM_FFd4_4" BEL
+        "eqm/M_state_q_FSM_FFd1" BEL "eqm/M_state_q_FSM_FFd2" BEL
+        "eqm/M_state_q_FSM_FFd3" BEL "eqm/M_state_q_FSM_FFd4" BEL
+        "eqm/m1/M_matrix_counter_q_2" BEL "eqm/m1/M_matrix_counter_q_1" BEL
+        "eqm/m1/M_matrix_counter_q_0" BEL "eqm/healthbar/M_state_q_FSM_FFd2"
+        BEL "eqm/healthbar/M_state_q_FSM_FFd3" BEL
+        "eqm/healthbar/M_state_q_FSM_FFd1" BEL "eqm/healthbar/M_gameover_q"
+        BEL "eqm/healthbar/M_bzero_q" BEL "eqm/healthbar/M_roundwinner_q" BEL
+        "eqm/healthbar/M_winner_q" BEL "eqm/healthbar/M_a_q_4" BEL
+        "eqm/healthbar/M_a_q_3" BEL "eqm/healthbar/M_a_q_2" BEL
+        "eqm/healthbar/M_a_q_1" BEL "eqm/healthbar/M_a_q_0" BEL
+        "eqm/healthbar/M_azero_q" BEL "eqm/healthbar/M_b_q_4" BEL
+        "eqm/healthbar/M_b_q_3" BEL "eqm/healthbar/M_b_q_2" BEL
+        "eqm/healthbar/M_b_q_1" BEL "eqm/healthbar/M_b_q_0" BEL
+        "eqm/M_show_win_q_0" BEL "eqm/M_show_win_q_1" BEL "eqm/M_show_win_q_2"
+        BEL "eqm/M_show_win_q_3" BEL "eqm/M_show_win_q_4" BEL
+        "eqm/M_show_win_q_5" BEL "eqm/M_show_win_q_6" BEL "eqm/M_show_win_q_7"
+        BEL "eqm/M_show_win_q_8" BEL "eqm/M_show_win_q_9" BEL
+        "eqm/M_health_val_q_0" BEL "eqm/M_health_val_q_1" BEL
+        "eqm/M_health_val_q_2" BEL "eqm/M_health_val_q_3" BEL
+        "eqm/M_health_val_q_4" BEL "eqm/M_health_val_q_5" BEL
+        "eqm/M_health_val_q_6" BEL "eqm/M_health_val_q_7" BEL
+        "eqm/M_health_val_q_8" BEL "eqm/M_health_val_q_9" BEL
+        "eqm/M_winner_q_0" BEL "eqm/M_winner_q_1" BEL "eqm/M_winner_q_2" BEL
+        "eqm/M_num2_q_0" BEL "eqm/M_num2_q_1" BEL
+        "eqm/modulus/M_state_q_FSM_FFd1" BEL "eqm/modulus/M_state_q_FSM_FFd2"
+        BEL "eqm/modulus/M_state_q_FSM_FFd3" BEL "eqm/modulus/M_div_value_q_3"
+        BEL "eqm/modulus/M_div_value_q_2" BEL "eqm/modulus/M_div_value_q_1"
+        BEL "eqm/modulus/M_div_value_q_0" BEL "eqm/modulus/M_min_value_q_3"
+        BEL "eqm/modulus/M_min_value_q_2" BEL "eqm/modulus/M_min_value_q_1"
+        BEL "eqm/modulus/M_min_value_q_0" BEL "eqm/modulus/M_mul_value_q_7"
+        BEL "eqm/modulus/M_mul_value_q_6" BEL "eqm/modulus/M_mul_value_q_5"
+        BEL "eqm/modulus/M_mul_value_q_4" BEL "eqm/modulus/M_mul_value_q_3"
+        BEL "eqm/modulus/M_mul_value_q_2" BEL "eqm/modulus/M_mul_value_q_1"
+        BEL "eqm/modulus/M_mul_value_q_0" BEL
+        "eqm/modulus/M_state_q_FSM_FFd3_1" BEL
+        "eqm/modulus/M_state_q_FSM_FFd3_2" BEL
+        "eqm/modulus/M_state_q_FSM_FFd1_1" BEL
+        "eqm/modulus/M_state_q_FSM_FFd2_1" BEL
+        "eqm/modulus/M_state_q_FSM_FFd1_2" BEL
+        "eqm/modulus/M_state_q_FSM_FFd2_2" BEL
+        "eqm/modulus/M_state_q_FSM_FFd3_3" BEL
+        "eqm/modulus/M_state_q_FSM_FFd2_3" BEL
+        "eqm/modulus/M_state_q_FSM_FFd1_3" BEL
+        "eqm/modulus/M_state_q_FSM_FFd2_4" BEL "eqm/M_num2_q_2" BEL
+        "eqm/M_num2_q_3" BEL "eqm/operations/M_out_q_1" BEL
+        "eqm/operations/M_out_q_0" BEL "eqm/operations/M_done_q" BEL
+        "eqm/M_firstdigit_q_0" BEL "eqm/M_firstdigit_q_1" BEL
+        "eqm/M_firstdigit_q_2" BEL "eqm/M_firstdigit_q_3" BEL
+        "eqm/M_operator_q_0" BEL "eqm/M_operator_q_1" BEL "eqm/M_num1_q_0" BEL
+        "eqm/M_num1_q_1" BEL "eqm/M_num1_q_2" BEL "eqm/M_num1_q_3" BEL
+        "eqm/M_result_q_0" BEL "eqm/M_result_q_1" BEL "clk_BUFGP/BUFG" BEL
+        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
+        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
+        "reset_cond/M_stage_q_3_1" BEL "edge_detector/M_last_q";
+TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

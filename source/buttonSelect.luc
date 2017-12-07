@@ -1,0 +1,48 @@
+module buttonSelect (
+    input clk,  // clock
+    input rst,  // reset
+    input btn[4], 
+    input taking_input,
+    output num[3]
+  ) {
+  
+  .clk(clk){
+    button_conditioner button_conditioner1;
+    button_conditioner button_conditioner2;
+    button_conditioner button_conditioner3;
+    button_conditioner button_conditioner4;
+    edge_detector edge_detector1;
+    edge_detector edge_detector2;
+    edge_detector edge_detector3;
+    edge_detector edge_detector4;
+      
+   
+     
+  }
+
+  always {
+    button_conditioner1.in = btn[0];
+    button_conditioner2.in = btn[1];
+    button_conditioner3.in = btn[2];
+    button_conditioner4.in = btn[3];
+    edge_detector1.in = button_conditioner1.out;
+    edge_detector2.in = button_conditioner2.out;
+    edge_detector3.in = button_conditioner3.out;
+    edge_detector4.in = button_conditioner4.out;
+    
+  case (taking_input) {
+      1:
+        if (btn[0] == 1) {
+          num = 1;
+        } else if (btn[1] == 1) {
+          num = 2;
+        } else if (btn[2] == 1) {
+          num = 3;
+        } else if (btn[3] == 1) {
+          num = 4;
+        } else {
+           num = 0;
+        }
+    }
+  }
+}

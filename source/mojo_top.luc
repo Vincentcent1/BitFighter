@@ -1,0 +1,103 @@
+global Inst {
+ 
+   const ADD = 6h0;
+ 
+   const SUB = 6h1;
+ 
+   const MUL = 6h2;
+ 
+  const AND = 6h18;
+ 
+   const OR = 6h1e;
+ 
+   const XOR = 6h16;
+ 
+   const LDR = 6h1a;
+ 
+   const SHL = 6h20;
+ 
+   const SHR = 6h21;
+ 
+   const SRA = 6h23;
+ 
+   const CMPEQ = 6h33;
+ 
+   const CMPLT = 6h35;
+ 
+   const CMPLE = 6h37;
+  
+   const DIV = 6h9;
+ 
+ }
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output spi_miso,        // AVR SPI MISO
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    output avr_rx,          // AVR RX (FPGA TX)
+    
+    output led1x[8],
+    output led1y[8],
+    output led2x[8],
+    output led2y[8],
+    output led3x[8],
+    output led3y[8],
+    output led4x[8],
+    output led4y[8],
+    output player1_punch,
+    output player2_punch,
+    
+    input player1_yes,
+    input player1_no,
+    input player2_yes,
+    input player2_no, 
+    output player1_hp[5],
+    output player2_hp[5]
+  ) {
+  
+  sig rst;                  // reset signal
+  dataPathAlu eqm;
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+    edge_detector edge_detector;
+    .rst(rst) {    
+    counter slowclk(#SIZE(1),#DIV(1));
+    dff counter1[27];
+    }
+  }
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    eqm.rst = rst;
+    eqm.clk = clk;
+    eqm.slowclk = slowclk.value;
+    led1x = eqm.led1x;
+    led1y = eqm.led1y;
+    led2x = eqm.led2x;
+    led2y = eqm.led2y;
+    led3x = eqm.led3x;
+    led3y = eqm.led3y;
+    led4x = eqm.led4x;
+    led4y = eqm.led4y;
+    
+    counter1.d = counter1.q + 1;
+    
+    player1_hp = eqm.heath_points[4:0];
+    player2_hp = eqm.heath_points[9:5];
+    edge_detector.in = counter1.q[26];
+    eqm.generateRandom = edge_detector.out;
+    eqm.button[0] = player1_yes;
+    eqm.button[1] = player1_no;
+    eqm.button[2] = player2_yes;
+    eqm.button[3] = player2_no;
+    player1_punch = eqm.player1_punch;
+    player2_punch = eqm.player2_punch;
+    
+  }
+}

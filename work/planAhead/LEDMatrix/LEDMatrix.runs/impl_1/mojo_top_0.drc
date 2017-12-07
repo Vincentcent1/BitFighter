@@ -1,0 +1,17 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Dec 07 23:50:40 2017
+
+drc -z mojo_top_0_routed.ncd mojo_top_0.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   eqm/M_state_q[3]_GND_36_o_Mux_92_o is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   eqm/M_buttonSelect_taking_input is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
